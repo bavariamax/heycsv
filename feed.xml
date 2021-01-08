@@ -2,10 +2,10 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>HeyCSV</title>
-    <link>http://www.heycsv.com/</link>
-    <atom:link href="http://www.heycsv.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 08 Jan 2021 09:20:05 +0000</pubDate>
-    <lastBuildDate>Fri, 08 Jan 2021 09:20:05 +0000</lastBuildDate>
+    <link>http://heycsv.com/</link>
+    <atom:link href="http://heycsv.com/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Fri, 08 Jan 2021 09:24:17 +0000</pubDate>
+    <lastBuildDate>Fri, 08 Jan 2021 09:24:17 +0000</lastBuildDate>
     <generator>Jekyll v3.8.5</generator>
     
       <item>
@@ -13,8 +13,8 @@
         <description>&lt;p&gt;content…&lt;/p&gt;
 </description>
         <pubDate>Thu, 07 Jan 2021 12:50:00 +0000</pubDate>
-        <link>http://www.heycsv.com/posts/what-is-the-difference-between-xls-and-csv-files/</link>
-        <guid isPermaLink="true">http://www.heycsv.com/posts/what-is-the-difference-between-xls-and-csv-files/</guid>
+        <link>http://heycsv.com/posts/what-is-the-difference-between-xls-and-csv-files/</link>
+        <guid isPermaLink="true">http://heycsv.com/posts/what-is-the-difference-between-xls-and-csv-files/</guid>
         
         
       </item>
@@ -24,8 +24,8 @@
         <description>&lt;p&gt;A CSV File…&lt;/p&gt;
 </description>
         <pubDate>Thu, 07 Jan 2021 12:23:00 +0000</pubDate>
-        <link>http://www.heycsv.com/posts/whats-is-csv-file/</link>
-        <guid isPermaLink="true">http://www.heycsv.com/posts/whats-is-csv-file/</guid>
+        <link>http://heycsv.com/posts/whats-is-csv-file/</link>
+        <guid isPermaLink="true">http://heycsv.com/posts/whats-is-csv-file/</guid>
         
         
       </item>
