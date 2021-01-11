@@ -8,9 +8,10 @@ collections:
   posts:
     title: Posts
     output: true
-  "-path":
+  "-":
     title: Tools
     output: true
+    permalink: ":path"
   uploads:
     title: Uploads
     output: true
