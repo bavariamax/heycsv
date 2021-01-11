@@ -3,7 +3,7 @@ title: HeyCSV
 timezone: UTC
 collections:
   blog:
-    title: Posts
+    title: Blog
     output: true
   posts:
     title: Posts
