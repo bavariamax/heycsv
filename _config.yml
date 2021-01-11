@@ -8,7 +8,7 @@ collections:
   posts:
     title: Posts
     output: true
-  "-path-":
+  "-path":
     title: Tools
     output: true
   uploads:
