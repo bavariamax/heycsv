@@ -1,6 +1,6 @@
 ---
 title: HeyCSV
-timezone: UTC
+timezone: Europe/Berlin
 collections:
   posts:
     title: Posts
