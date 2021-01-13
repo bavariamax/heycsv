@@ -2,9 +2,6 @@
 title: HeyCSV
 timezone: Europe/Berlin
 collections:
-  blog:
-    title: Posts
-    output: true
   posts:
     title: Posts
     output: true
