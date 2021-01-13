@@ -1,6 +1,6 @@
 ---
-title: Whats is a CSV File?
-date: 2021-01-07 12:23:00 Z
+title: Blog Post 1
+date: 2021-01-07 13:23:00 +01:00
 position: 0
 ---
 
