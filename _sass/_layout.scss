@@ -1,6 +1,15 @@
 /**
  * Site header
  */
+
+.wrapper-header {
+    padding: 0px 24px;
+    flex: 1 0 auto;
+    width: 100%;
+    max-width: 1440px;
+}
+
+
 .site-header {
     border-top: 5px solid $grey-color-dark;
     border-bottom: 1px solid $grey-color-light;
@@ -174,7 +183,7 @@
 }
 
 .home-titles {
-    padding: 24px 0;
+    padding: 24px 0 44px 0;
 }
 
 .home-heading {
