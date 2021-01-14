@@ -1,5 +1,5 @@
 ---
-title: HeyCSV
+title: HeyCSV - Free Solutions to all of your CSV File problems
 timezone: Europe/Berlin
 collections:
   blog:
@@ -28,4 +28,4 @@ defaults:
   values:
     layout: page
 permalink: pretty
-url: https://heycsv.com
+url: https://www.heycsv.com
