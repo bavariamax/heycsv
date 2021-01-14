@@ -9,6 +9,19 @@ layout: default
     <h2 class="home-subheading">Simple, fast and reliable. Also for very big files.</h1>
   </div>
 
+
+  <ul class="tool-list">
+    {% for tool in site.tool %}
+      <li>
+
+        <h2>
+          <a class="tool-link" href="{{ tool.url | prepend: site.baseurl }}">{{ tool.title }}</a>
+        </h2>
+      </li>
+    {% endfor %}
+  </ul>
+
+
   <h1 class="page-heading">Blog Posts</h1>
 
   <ul class="post-list">

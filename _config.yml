@@ -27,5 +27,10 @@ defaults:
     type: pages
   values:
     layout: page
+- scope:
+    path: ''
+    type: tool
+  values:
+    layout: page
 permalink: pretty
 url: https://www.heycsv.com
