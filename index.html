@@ -5,33 +5,22 @@ layout: default
 <div class="home">
   
   <div class="home-titles">
-    <h1 class="home-heading">We want to make handling of CSV files easy.</h1>
-    <h2 class="home-subheading">Simple, fast and reliable. Also for very big files.</h1>
+    <h1 class="home-heading">We want to make CSV files easy.</h1>
+    <h2 class="home-subheading">Simple, fast and reliable. Even very big files.</h1>
   </div>
 
 
   <ul class="tool-list">
-    {% for tool in site.tool %}
-      <li>
-
-        <h2>
-          <a class="tool-link" href="{{ tool.url | prepend: site.baseurl }}">{{ tool.title }}</a>
-        </h2>
-      </li>
-    {% endfor %}
-  </ul>
-
-
-  <h1 class="page-heading">Blog Posts</h1>
-
-  <ul class="post-list">
-    {% for post in site.blog %}
-      <li>
-        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
-
-        <h2>
-          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-        </h2>
+    {% assign sorted_tools = site.tool | sort:"position" %}
+    {% for tool in sorted_tools %}
+      <li class="tool-box" style="background: {{ tool.color }}">
+        <a href="{{ tool.url | prepend: site.baseurl }}">
+            <span class="linkSpanner"></span>
+          </a>
+        <div class="tool-content">
+          <h3 class="tool-title">{{ tool.title }}</h3>
+          <div>{{ tool.short-description }}</div>
+        </div>
       </li>
     {% endfor %}
   </ul>
