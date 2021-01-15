@@ -1,10 +1,9 @@
 ---
-title: Detect duplicate rows in CSV files
+title: Detect duplicate rows in a CSV file
 date: 2021-01-11 15:49:00 +01:00
 position: 4
-site-title: Detect & Remove Duplicate rows
-short-description: Change the format of a CSV files in terms of separator, text quotation,
-  etc.
+site-title: Detect & Remove Duplicate rows in a CSV file
+short-description: Detect and remove duplicate tows in a CSV file
 color: "#21d860"
 ---
 
