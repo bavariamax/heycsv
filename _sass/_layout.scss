@@ -50,7 +50,7 @@
         }
     }
 
-    @include media-query($on-palm) {
+    @include media-query($on-phone) {
         position: absolute;
         top: 9px;
         right: $spacing-unit / 2;
@@ -163,7 +163,7 @@
     }
 }
 
-@include media-query($on-palm) {
+@include media-query($on-phone) {
     .footer-col {
         float: none;
         width: -webkit-calc(100% - (#{$spacing-unit} / 2));
@@ -211,6 +211,18 @@
     position: relative;
     box-sizing: border-box;
 }
+
+@include media-query($on-laptop) {
+    .tool-box {
+         width: 25%;     
+    }
+ }
+
+@include media-query($on-phone) {
+    .tool-box {
+         width: 50%;     
+    }
+ }
 
 .tool-title {
     font-size: 16px;
