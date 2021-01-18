@@ -32,5 +32,10 @@ defaults:
     type: tool
   values:
     layout: page
+- scope:
+    path: ''
+    type: blog
+  values:
+    layout: post
 permalink: pretty
-url: https://www.heycsv.com
+url: http://127.0.0.1:4000
