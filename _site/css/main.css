@@ -106,7 +106,7 @@ pre > code { border: 0; padding-right: 0; padding-left: 0; }
 
 .tool-list { display: flex; flex-wrap: wrap; list-style: outside none none; margin: 0px; padding: 0px 0px 90px; }
 
-.tool-box { color: white; width: 20%; height: 180px; margin: 0px; border: 1px solid white; cursor: pointer; position: relative; box-sizing: border-box; }
+.tool-box { color: white; width: 20%; height: 160px; margin: 0px; border: 1px solid white; cursor: pointer; position: relative; box-sizing: border-box; }
 
 .tool-title { font-size: 16px; font-weight: 600; }
 
