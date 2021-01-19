@@ -2,10 +2,10 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>👋 HeyCSV - Free Solutions to all of your CSV File problems</title>
-    <link>http://127.0.0.1:4000/</link>
-    <atom:link href="http://127.0.0.1:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 19 Jan 2021 13:13:36 +0100</pubDate>
-    <lastBuildDate>Tue, 19 Jan 2021 13:13:36 +0100</lastBuildDate>
+    <link>http://127.0.0.1:4000//</link>
+    <atom:link href="http://127.0.0.1:4000//feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Tue, 19 Jan 2021 14:54:20 +0100</pubDate>
+    <lastBuildDate>Tue, 19 Jan 2021 14:54:20 +0100</lastBuildDate>
     <generator>Jekyll v4.2.0</generator>
     
   </channel>
