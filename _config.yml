@@ -12,6 +12,11 @@ collections:
     title: Tools
     output: true
     permalink: ":path"
+    Categories:
+    - Generation & Format
+    - Converter
+    - Join & Merge
+    - 
   uploads:
     title: Uploads
     output: true
