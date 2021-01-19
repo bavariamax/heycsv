@@ -13,4 +13,4 @@ Mike Bryan, mikebryan@foo.net`
 
 It is by no means a format that is only used by tech people or scientists. By now a lot of roles in big or small companies will be in touch with CSV files. Exports from CRM, analytics data or product data to name a few examples that go through business departments.
 
-We think there are no simple tools who really 
+We think there are no simple tools who really
