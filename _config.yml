@@ -43,4 +43,4 @@ defaults:
   values:
     layout: post
 permalink: pretty
-url: http://127.0.0.1:4000
+url: https://www.heycsv.com
