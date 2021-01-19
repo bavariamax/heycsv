@@ -259,13 +259,28 @@
 /**
  * Page content
  */
-.page-content {
-    padding: $spacing-unit 0;
-}
+
 
 .page-heading {
     font-size: 20px;
 }
+
+.page-title {
+    font-size: 42px;
+    letter-spacing: -1px;
+    line-height: 1;
+
+    @include media-query($on-laptop) {
+        font-size: 36px;
+    }
+}
+
+.page-content {
+    padding: $spacing-unit 0;
+}
+
+
+
 
 .post-list {
     margin-left: 0;
@@ -306,7 +321,16 @@
     }
 }
 
+.post-image {
+    width: 100%;
+    height: 100%;
+    margin-bottom: $spacing-unit;
+}
+
 .post-content {
+    padding: 0 200px 0 200px;
+
+
     margin-bottom: $spacing-unit;
 
     h2 {
