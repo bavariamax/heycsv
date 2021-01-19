@@ -10,6 +10,8 @@ A simple example would be:
 Steve Apple, steve@apple.com 
 Mike Bryan, mikebryan@foo.net`
 
+Sometimes CSV is also called "character separated value" file as the "," can be theoreticall replaced by other characters, typically a semicolon ";".
+
 While JSON or XML data files can represent a more complex structure of data, CSV mainly is used for simple flat hierarchy data.
 
 
