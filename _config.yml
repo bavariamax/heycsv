@@ -1,0 +1,46 @@
+---
+title: "\U0001F44B HeyCSV - Free Solutions to all of your CSV File problems"
+timezone: Europe/Berlin
+collections:
+  blog:
+    title: Posts
+    output: true
+  posts:
+    title: Posts
+    output: true
+  tool:
+    title: Tools
+    output: true
+    permalink: ":path"
+    Categories:
+    - Generation & Format
+    - Converter
+    - Join & Merge
+    - 
+  uploads:
+    title: Uploads
+    output: true
+defaults:
+- scope:
+    path: ''
+    type: posts
+  values:
+    layout: post
+    permalink: "/posts/:title/"
+- scope:
+    path: ''
+    type: pages
+  values:
+    layout: page
+- scope:
+    path: ''
+    type: tool
+  values:
+    layout: page
+- scope:
+    path: ''
+    type: blog
+  values:
+    layout: post
+permalink: pretty
+url: https://www.heycsv.com
