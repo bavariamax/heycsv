@@ -13,7 +13,7 @@ Mike Bryan, mikebryan@foo.net`
 
 It is by no means a format that is only used by tech people or scientists. A lot of roles in big or small companies are in touch with CSV files (or should get in touch!). Let it be exports from a CRM, analytics data or product data to name a few examples. These data go mostly also through business departments.
 
-Now what happens, when this data needs to be manipulated slightly? Usually it never comes out of a system in the perfect desired format: 
+Now, what happens when this data needs to be manipulated slightly? Usually it never comes out of a system in the perfect desired format: 
 
 Wrong date format, a column needs to be split, two files need to be merged, you must filter the data, transpose it, join it with another file, look for patterns, convert it, enrich it with other data, ... the list goes on and on.
 
