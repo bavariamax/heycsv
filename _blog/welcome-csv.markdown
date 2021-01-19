@@ -19,8 +19,10 @@ Wrong date format, a column needs to be split, two files need to be merged, you 
 In most of these cases a spreadsheet tool like Excel or Google Sheets will do the job. If you have some experience with Excel, then even better.
 
 What happens if:
-* you work on a file with more than 1,048,576 rows (the physical limit of Excel) or any other limit that crashes your computer
-* 
+* you work on a file with more than 1,048,576 rows (the physical limit of Excel) or any other limit that crashes your computer?
+* you are not very good in Excel and it takes you hours of googling the right solution?
+* you realize Excel/Google Sheets is not good enough and you need your IT department to figure it out?
+* you just want to get the job done fast without any hassle?
 
-We think there must be a better way!
+That's why we think there must be a better way!
 
