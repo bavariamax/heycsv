@@ -310,6 +310,13 @@
 .post-header {
     padding: 0 200px 0 200px;
     margin-bottom: $spacing-unit;
+
+    @include media-query($on-laptop) {
+        padding: 0 100px 0 100px;
+    }
+    @include media-query($on-phone) {
+        padding: 0 20px 0 20px;
+    }
 }
 
 .post-title {
@@ -331,6 +338,12 @@
 .post-content {
     padding: 0 200px 0 200px;
 
+    @include media-query($on-laptop) {
+        padding: 0 100px 0 100px;
+    }
+    @include media-query($on-phone) {
+        padding: 0 20px 0 20px;
+    }
 
     margin-bottom: $spacing-unit;
 
