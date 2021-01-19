@@ -5,7 +5,7 @@ position: 0
 image: "/uploads/HeyCSV%20-%20Welcome%20%231.png"
 ---
 
-The standard go to file format when it comes to exchanging structured data between companies or within large companies still is in the year 2021 the CSV (comma separator values) file format. The reason is surely because it's so simple:
+The standard "go-to" file format when it comes to exchanging structured data between companies or within large companies still is in the year 2021 the CSV (comma separator values) file format. The reason is surely because it's so simple:
 
 `name, email 
 Steve Apple, steve@apple.com 
