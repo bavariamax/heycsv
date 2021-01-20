@@ -10,7 +10,7 @@ A simple example would be:
 Steve Apple,steve@apple.com 
 Mike Bryan,mikebryan@foo.net`
 
-One separation is also called a column as it represents a column of a database table for instance.
+One separated data entity vertically is also called a column as it represents a column of a database table for instance.
 
 Sometimes CSV is also called "character separated value" file as the "," can be replaced by any other character, typically semicolon ";" or Tabulator key (↹) are used besides comma. 
 
@@ -24,7 +24,7 @@ Banana,"A banana is an elongated, edible fruit – botanically a berry – produ
 
 Without quotation mark a system would not be able to see the descriptions as one text, but split at the commas "," and see another column. 
 
-Alternatively with semicolon as separator and without quotation marks:
+Alternatively with semicolon as separator and without quotation marks. Then it is also clear what column content belongs together:
 
 `product,description 
 Apple;the round fruit of a tree of the rose family, which typically has thin green or red skin and crisp flesh. 
@@ -32,15 +32,27 @@ Banana;A banana is an elongated, edible fruit – botanically a berry – produc
 
 You see it is quite important to watch out for the right configuration setting of a .csv file before exporting or importing from a system.
 
-Since a .csv file doesnt come with a configuration setting attached, it can only be derived by looking at it, if there is no information from the origin system.
+Since a .csv file doesnt come with a configuration setting attached, it can only be derived by looking at the content when there is no additional information from the origin system.
 
 # What is a CSV file used for?
 
-CSV is mainly used for simple flat hierarchy data like addresses, product or order data to be exported and imported from one to another system. But it can also get quite complex with millions of rows and dozens of columns
+CSV is mainly used for simple flat hierarchy data like addresses, product or order data to be exported and imported from one to another system. But it can also get quite complex with millions of rows and dozens of columns.
 
-While JSON or XML data files can represent a more complex structure of data, 
+For even more complex data structures and nested data formats like JSON or XML data are typically used.
 
 
 # How do I open a .csv file?
 
+As a .csv file is a simple text file, the easiest way is to open it with any text editor of your choice (right click on the file and then "open with"). However, for more complex data than the simple examples above it is hard to visually grasp the structure of the data.
+
+Therefore it is recommended to open a .csv file with a spreadsheet tool like Microsoft Excel, Libre Office or Google Sheets. 
+
+![csv-file-example-sheets.png](/uploads/csv-file-example-sheets.png)
+
+As you can see this is a lot more structured than the raw format in the examples above or when you open it in a text editor.
+
 # How can I edit a .csv file?
+
+A spreadsheet tool is also the best way to edit a .csv file as you can apply operations per row or column or in any way you are used to when dealing with spreadsheet tables.
+
+You have to watch out, however, that you keep an eye on the format configuration when you want to save/export the .csv again from the spreadsheet tool. A spreadsheet tool might automatically save a .csv file with semicolon ";" separator while you want to save it with comma "," as separator.
