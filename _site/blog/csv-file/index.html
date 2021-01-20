@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>What is a CSV file? | HeyCSV</title>
+  <meta name="description" content="CSV stands for “comma separated values” and just means that a simple text file contains a list structured data. This structure is achieved by separating data...">
+
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="http://127.0.0.1:4000/blog/csv-file/">
+  <link rel="alternate" type="application/rss+xml" title="👋 HeyCSV - Free Solutions to all of your CSV File problems" href="http://127.0.0.1:4000/feed.xml">
+
+<link rel="apple-touch-icon" sizes="180x180" href="http://127.0.0.1:4000/assets/favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://127.0.0.1:4000/assets/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="http://127.0.0.1:4000/assets/favicon/favicon-16x16.png">
+<link rel="manifest" href="http://127.0.0.1:4000/assets/favicon/site.webmanifest">
+<link rel="shortcut icon" href="http://127.0.0.1:4000/assets/favicon/favicon.ico">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="msapplication-config" content="http://127.0.0.1:4000/assets/favicon/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
+
+
+</head>
+
+
+  <body>
+
+    <header class="site-header">
+
+  <div class="wrapper-header">
+
+    <a class="site-title" href="http://127.0.0.1:4000/"><img src="http://127.0.0.1:4000/assets/heycsv_logo_transp.svg" alt="HeyCSV Logo" /></a>
+
+	<nav class="site-nav">
+      <a href="#" class="menu-icon">
+        <svg viewBox="0 0 18 15">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </a>
+
+      <div class="trigger">
+          <a class="page-link" href="http://127.0.0.1:4000/blog">Blog</a>
+      </div>
+
+  </div>
+
+</header>
+
+
+    <div class="page-content">
+      <div class="wrapper">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <div>
+   <img class="post-image" src="http://127.0.0.1:4000" alt="Image - What is a CSV file?" /> 
+  </div>
+
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">What is a CSV file?</h1>
+    <p class="post-meta"><time datetime="2021-01-20T13:09:00+01:00" itemprop="datePublished">Jan 20, 2021</time></p>
+  </header>
+
+
+
+  <div class="post-content" itemprop="articleBody">
+    <p>CSV stands for “<strong>c</strong>omma <strong>s</strong>eparated <strong>v</strong>alues” and just means that a simple text file contains a list structured data. This structure is achieved by separating data entities with a “,”. That’s where the name is from.</p>
+
+<p>A simple example would be:
+<code class="language-plaintext highlighter-rouge">name,email
+Steve Apple,steve@apple.com
+Mike Bryan,mikebryan@foo.net</code></p>
+
+<p>One separated data entity vertically is also called a column as it represents a column of a database table for instance.</p>
+
+<p>Sometimes CSV is also called “character separated value” file as the “,” can be replaced by any other character, typically semicolon “;” or Tabulator key (↹) are used besides comma.</p>
+
+<p>When the content within a column can contain a “,” as content itself, then it can make sense to use a semicolon “;” as separator to avoid having a broken data structure.</p>
+
+<p>Alternatively a CSV file can use a certain quote character to enclose content of a column. Typically this is a “ quotation mark character. For example:</p>
+
+<p><code class="language-plaintext highlighter-rouge">product,description 
+Apple,"the round fruit of a tree of the rose family, which typically has thin green or red skin and crisp flesh." 
+Banana,"A banana is an elongated, edible fruit – botanically a berry – produced by several kinds of large herbaceous flowering plants in the genus Musa"</code></p>
+
+<p>Without quotation mark a system would not be able to see the descriptions as one text, but split at the commas “,” and see another column.</p>
+
+<p>Alternatively with semicolon as separator and without quotation marks. Then it is also clear what column content belongs together:</p>
+
+<p><code class="language-plaintext highlighter-rouge">product,description 
+Apple;the round fruit of a tree of the rose family, which typically has thin green or red skin and crisp flesh. 
+Banana;A banana is an elongated, edible fruit – botanically a berry – produced by several kinds of large herbaceous flowering plants in the genus Musa</code></p>
+
+<p>You see it is quite important to watch out for the right configuration setting of a .csv file before exporting or importing from a system.</p>
+
+<p>Since a .csv file doesnt come with a configuration setting attached, it can only be derived by looking at the content when there is no additional information from the origin system.</p>
+
+<h1 id="what-is-a-csv-file-used-for">What is a CSV file used for?</h1>
+
+<p>CSV is mainly used for simple flat hierarchy data like addresses, product or order data to be exported and imported from one to another system. But it can also get quite complex with millions of rows and dozens of columns.</p>
+
+<p>For even more complex data structures and nested data formats like JSON or XML data are typically used.</p>
+
+<h1 id="how-do-i-open-a-csv-file">How do I open a .csv file?</h1>
+
+<p>As a .csv file is a simple text file, the easiest way is to open it with any text editor of your choice (right click on the file and then “open with”). However, for more complex data than the simple examples above it is hard to visually grasp the structure of the data.</p>
+
+<p>Therefore it is recommended to open a .csv file with a spreadsheet tool like Microsoft Excel, Libre Office or Google Sheets.</p>
+
+<p><em><img src="/uploads/csv-file-example-sheets.png" alt="csv-file-example-sheets.png" />
+.csv file opened in Google Sheets</em></p>
+
+<p>As you can see this is a lot more structured than the raw format in the examples above or when you open it in a text editor.</p>
+
+<h1 id="how-can-i-edit-a-csv-file">How can I edit a .csv file?</h1>
+
+<p>A spreadsheet tool is also the best way to edit a .csv file as you can apply operations per row or column or in any way you are used to when dealing with spreadsheet tables.</p>
+
+<p>You have to watch out, however, that you keep an eye on the format configuration when you want to save/export the .csv again from the spreadsheet tool. A spreadsheet tool might automatically save a .csv file with semicolon “;” separator while you want to save it with comma “,” as separator.</p>
+
+  </div>
+
+</article>
+
+      </div>
+    </div>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+      <nav class="site-nav">
+      <a href="#" class="menu-icon">
+        <svg viewBox="0 0 18 15">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </a>
+
+
+      
+
+
+    </nav>
+
+
+
+  </div>
+
+</footer>
+
+
+  </body>
+
+</html>

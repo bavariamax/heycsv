@@ -6,7 +6,8 @@ site-title: Blog - HeyCSV
 ---
 
 <ul class="post-list">
-    {% for post in site.blog %}
+	{% assign sorted = site.blog | reverse %}
+    {% for post in sorted %}
       <li>
         <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
 
