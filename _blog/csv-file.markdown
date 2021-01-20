@@ -30,7 +30,9 @@ Alternatively with semicolon as separator and without quotation marks:
 Apple;the round fruit of a tree of the rose family, which typically has thin green or red skin and crisp flesh. 
 Banana;A banana is an elongated, edible fruit – botanically a berry – produced by several kinds of large herbaceous flowering plants in the genus Musa`
 
-You see it is quite important 
+You see it is quite important to watch out for the right configuration setting of a .csv file before exporting or importing from a system.
+
+Since a .csv file doesnt come with a configuration setting attached, it can only be derived by looking at it, if there is no information from the origin system.
 
 # What is a CSV file used for?
 
