@@ -1,6 +1,6 @@
 ---
 title: What is a CSV file?
-date: 2021-01-19 17:09:00 +01:00
+date: 2021-01-20 13:09:00 +01:00
 ---
 
 CSV stands for "**c**omma **s**eparated **v**alues" and just means that a simple text file contains a list structured data. This structure is achieved by separating data entities with a ",". That's where the name is from. 
