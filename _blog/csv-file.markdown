@@ -10,9 +10,19 @@ A simple example would be:
 Steve Apple, steve@apple.com 
 Mike Bryan, mikebryan@foo.net`
 
-Sometimes CSV is also called "character separated value" file as the "," can be theoreticall replaced by other characters, typically a semicolon ";".
+One separation is also called a column as it represents a column of a database table for instance.
 
-While JSON or XML data files can represent a more complex structure of data, CSV mainly is used for simple flat hierarchy data.
+Sometimes CSV is also called "character separated value" file as the "," can be replaced by any other character, typically semicolon ";" or Tabulator key (↹) are used besides comma. 
+
+When the content within a column can contain a "," as content itself, then it can make sense to use a semicolon ";" as separator to avoid having a broken data structure.
+
+Alternatively a CSV file can use a certain quote character to enclose content of a column. Typically this is a " quotation mark character
+
+# What is a CSV file used for?
+
+CSV is mainly used for simple flat hierarchy data like addresses, product or order data to be exported and imported from one to another system. But it can also get quite complex with millions of rows and dozens of columns
+
+While JSON or XML data files can represent a more complex structure of data, 
 
 
 # How do I open a .csv file?
