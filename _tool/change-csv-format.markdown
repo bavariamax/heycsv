@@ -1,5 +1,5 @@
 ---
-title: CSV format settings
+title: Format Settings
 date: 2021-01-11 15:46:00 +01:00
 categories:
 - Generation & Format
