@@ -204,7 +204,7 @@
 .tool-box {
     color: white;
     width: 20%;
-    height: 160px;
+    height: 120px;
     margin: 0px;
     border: 1px solid white;
     cursor: pointer;
@@ -224,9 +224,14 @@
     }
  }
 
+.tool-icon {
+    padding-left: 12px
+}
+
+
 .tool-title {
     font-size: 16px;
-    font-weight: 600;  
+    font-weight: 800;  
 }
 
 .linkSpanner {
@@ -249,8 +254,8 @@
 
 
 .tool-content {
-    font-size: 14px;
-    font-weight: 300;
+    font-size: 13px;
+    font-weight: 400;
     padding: 12px;
 }
 
