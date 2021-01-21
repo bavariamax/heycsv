@@ -10,9 +10,25 @@ site-title: "\U0001F44B HeyCSV - Free Solutions to all of your CSV File problems
     <h2 class="home-subheading">Simple, fast and reliable. Even for very big files.</h2>
   </div>
 
-  <ul class="tool-list">
+
+  <!-- create categories array-->
+  {% assign categories_array = "" | split:"|" %}
+
+  <!--Add each unique 'collection' category to the array-->
+  {% for post in site.tool %}
+      {% for category in post.categories %}
+          {% assign categories_array = categories_array | push: category | uniq %}
+      {% endfor %}
+  {% endfor %}
+
+  <!--Output the tools per category-->
+  {% for category in categories_array %}
+    <h2>{{ category }}</h2>
+
+    <ul class="tool-list">
     {% assign sorted_tools = site.tool | sort:"position" %}
-    {% for tool in sorted_tools %}
+    {% assign tools = sorted_tools | where:'categories', category %}
+    {% for tool in tools %}
       <li class="tool-box" style="background: {{ tool.color }}">
         <a href="{{ tool.url | prepend: site.baseurl }}">
             <span class="linkSpanner"></span>
@@ -26,7 +42,9 @@ site-title: "\U0001F44B HeyCSV - Free Solutions to all of your CSV File problems
         </div>
       </li>
     {% endfor %}
-  </ul>
+    </ul>
+  {% endfor %}
+
 
 
 
