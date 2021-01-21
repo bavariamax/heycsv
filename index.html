@@ -11,18 +11,11 @@ site-title: "\U0001F44B HeyCSV - Free Solutions to all of your CSV File problems
   </div>
 
 
-  <!-- create categories array-->
-  {% assign categories_array = "" | split:"|" %}
+  {% assign tool_categories = site.collections | where:'title', 'Tools' %}
+  {% for post in tool_categories %}
+   {% for category in post.Categories %}
+  
 
-  <!--Add each unique 'collection' category to the array-->
-  {% for post in site.tool %}
-      {% for category in post.categories %}
-          {% assign categories_array = categories_array | push: category | uniq %}
-      {% endfor %}
-  {% endfor %}
-
-  <!--Output the tools per category-->
-  {% for category in categories_array %}
     <h2>{{ category }}</h2>
 
     <ul class="tool-list">
@@ -43,7 +36,9 @@ site-title: "\U0001F44B HeyCSV - Free Solutions to all of your CSV File problems
       </li>
     {% endfor %}
     </ul>
-  {% endfor %}
+  
+     {% endfor %} 
+  {% endfor %} 
 
 
 
