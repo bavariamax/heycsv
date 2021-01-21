@@ -13,7 +13,7 @@ collections:
     output: true
     permalink: ":path"
     Categories:
-    - Generation & Format
+    - Create & Format Settings
     - Join & Merge
     - View & Edit
     - Convert
