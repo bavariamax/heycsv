@@ -14,9 +14,9 @@ collections:
     permalink: ":path"
     Categories:
     - Generation & Format
-    - Convert
     - Join & Merge
     - View & Edit
+    - Convert
   uploads:
     title: Uploads
     output: true
