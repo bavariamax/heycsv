@@ -127,9 +127,13 @@ pre > code { border: 0; padding-right: 0; padding-left: 0; }
 /** Page content */
 .page-heading { font-size: 20px; }
 
-.page-title { font-size: 42px; letter-spacing: -1px; line-height: 1; }
+.page-title { font-size: 42px; font-weight: 400; letter-spacing: -1px; line-height: 1; }
 
 @media screen and (max-width: 800px) { .page-title { font-size: 36px; } }
+
+.page-description { font-size: 22px; }
+
+@media screen and (max-width: 800px) { .page-description { font-size: 18px; } }
 
 .page-content { padding: 20px 0; }
 
