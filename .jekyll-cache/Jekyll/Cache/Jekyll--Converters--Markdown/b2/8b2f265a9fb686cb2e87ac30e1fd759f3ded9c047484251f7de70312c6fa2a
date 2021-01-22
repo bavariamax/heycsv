@@ -1,4 +1,4 @@
-I"x*<p>The standard “go-to” file format when it comes to exchanging structured data between companies or within large companies still is in the year 2021 the CSV (comma separator values) file format. The reason is surely because it’s so simple:</p>
+I"�*<p>The standard “go-to” file format when it comes to exchanging structured data between companies or within large companies and its different IT systems still is in the year 2021 the CSV (comma separator values) file format. The reason is surely because it’s so simple:</p>
 
 <p><code class="language-plaintext highlighter-rouge">name, email 
 Steve Apple, steve@apple.com 
