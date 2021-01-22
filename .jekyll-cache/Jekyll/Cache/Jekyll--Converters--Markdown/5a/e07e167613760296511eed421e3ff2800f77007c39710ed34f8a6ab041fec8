@@ -1,75 +1,4 @@
-<!DOCTYPE html>
-<html>
-
-  <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <title>Welcome to HeyCSV | HeyCSV</title>
-  <meta name="description" content="The standard “go-to” file format when it comes to exchanging structured data between companies or within large companies and its different IT systems still i...">
-
- <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700" rel="stylesheet">
-  <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="http://127.0.0.1:4000/blog/welcome-csv/">
-  <link rel="alternate" type="application/rss+xml" title="👋 HeyCSV - Free Solutions to all of your CSV File problems" href="http://127.0.0.1:4000/feed.xml">
-
-<link rel="apple-touch-icon" sizes="180x180" href="http://127.0.0.1:4000/assets/favicon/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="http://127.0.0.1:4000/assets/favicon/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="http://127.0.0.1:4000/assets/favicon/favicon-16x16.png">
-<link rel="manifest" href="http://127.0.0.1:4000/assets/favicon/site.webmanifest">
-<link rel="shortcut icon" href="http://127.0.0.1:4000/assets/favicon/favicon.ico">
-<meta name="msapplication-TileColor" content="#da532c">
-<meta name="msapplication-config" content="http://127.0.0.1:4000/assets/favicon/browserconfig.xml">
-<meta name="theme-color" content="#ffffff">
-
-
-</head>
-
-
-  <body>
-
-    <header class="site-header">
-
-  <div class="wrapper-header">
-
-    <a class="site-title" href="http://127.0.0.1:4000/"><img src="http://127.0.0.1:4000/assets/heycsv_logo_transp.svg" alt="HeyCSV Logo" /></a>
-
-	<nav class="site-nav">
-      <a href="#" class="menu-icon">
-        <svg viewBox="0 0 18 15">
-          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
-          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
-          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
-        </svg>
-      </a>
-
-      <div class="trigger">
-          <a class="page-link" href="http://127.0.0.1:4000/blog">Blog</a>
-      </div>
-
-  </div>
-
-</header>
-
-
-    <div class="page-content">
-      <div class="wrapper">
-        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-
-  <div>
-   <img class="post-image" src="http://127.0.0.1:4000/uploads/HeyCSV%20-%20Welcome%20%231.png" alt="Image - Welcome to HeyCSV" /> 
-  </div>
-
-  <header class="post-header">
-    <h1 class="post-title" itemprop="name headline">Welcome to HeyCSV</h1>
-    <p class="post-meta"><time datetime="2021-01-19T13:23:00+01:00" itemprop="datePublished">Jan 19, 2021</time></p>
-  </header>
-
-
-
-  <div class="post-content" itemprop="articleBody">
-    <p>The standard “go-to” file format when it comes to exchanging structured data between companies or within large companies and its different IT systems still is in the year 2021 the <a href="https://www.heycsv.com/blog/csv-file/">CSV file format</a>. The reason is surely because it’s so simple:</p>
+I"�,<p>The standard “go-to” file format when it comes to exchanging structured data between companies or within large companies and its different IT systems still is in the year 2021 the <a href="https://www.heycsv.com/blog/csv-file/">CSV file format</a>. The reason is surely because it’s so simple:</p>
 
 <p><code class="language-plaintext highlighter-rouge">name, email 
 Steve Apple, steve@apple.com 
@@ -147,7 +76,7 @@ Mike Bryan, mikebryan@foo.net</code></p>
 
 <!-- START - We recommend to place the below code where you want the form in your website html  -->
 <div class="sib-form" style="text-align: center;
-         background-color: transparent;                                 ">
+         background-color: #EFF2F7;                                 ">
   <div id="sib-form-container" class="sib-form-container">
     <div id="error-message" class="sib-form-message-panel" style="font-size:16px; text-align:left; font-family:&quot;Helvetica&quot;, sans-serif; color:#661d1d; background-color:#ffeded; border-radius:3px; border-color:#ff4949;max-width:540px;">
       <div class="sib-form-message-panel__text sib-form-message-panel__text--center">
@@ -171,8 +100,8 @@ Mike Bryan, mikebryan@foo.net</code></p>
       </div>
     </div>
     <div></div>
-    <div id="sib-container" class="sib-container--large sib-container--vertical" style="text-align:center; background-color:rgba(255,255,255,1); max-width:540px; border-radius:6px; border-width:1px; border-color:#C0CCD9; border-style:solid;">
-      <form id="sib-form" method="POST" action="https://b6ce3683.sibforms.com/serve/MUIEAOwQgzwQy02JpXUcBBYE3R4JOMJ7r7NC08j_0fJJj3x8I54s7tKNnjRgGRZUmJ6UXwk8uKu3ZIqusNzgQhBEZoWR4SJLJbb-I-QnFLFIYeiOsxeBcR093UD-4m89JqDYzcZyOhSpEnliKxlxZZ7W2di7_-LroXo3w1VVcBzPV3mdWWILmoT2KHhN3BNcrL6C4QJC22Tj3ZRF" data-type="subscription">
+    <div id="sib-container" class="sib-container--large sib-container--vertical" style="text-align:center; background-color:rgba(255,255,255,1); max-width:540px; border-radius:3px; border-width:1px; border-color:#C0CCD9; border-style:solid;">
+      <form id="sib-form" method="POST" action="https://b6ce3683.sibforms.com/serve/MUIEAO83RLOlgHBktVGXPOf1iGTEs_zkoskZtjDU8cTZytvlxVTByQ0Bnf0D9pz9l2TOG4NoO6luRtvRqsOyB8IjwJwXjH3NtNKoDYPO4LDSysmraaBCcseWiOK1iEu9ICcanait9dMudu8fXVJwH9YvG_VK018Z9yrJyXlS_h3sv1JrlMdCj-prBeKXgOp16o9v9sEXxxkPWpjI" data-type="subscription">
         <div style="padding: 8px 0;">
           <div class="sib-form-block" style="font-size:20px; text-align:left; font-weight:700; font-family:&quot;Helvetica&quot;, sans-serif; color:#3C4858; background-color:transparent;">
             <p>Get notified about HeyCSV News</p>
@@ -255,40 +184,4 @@ Mike Bryan, mikebryan@foo.net</code></p>
 
 <!-- END - We recommend to place the above code in footer or bottom of your website html  -->
 <!-- End Sendinblue Form -->
-
-  </div>
-
-</article>
-
-      </div>
-    </div>
-
-    <footer class="site-footer">
-
-  <div class="wrapper">
-
-      <nav class="site-nav">
-      <a href="#" class="menu-icon">
-        <svg viewBox="0 0 18 15">
-          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
-          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
-          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
-        </svg>
-      </a>
-
-
-      
-
-
-    </nav>
-
-
-
-  </div>
-
-</footer>
-
-
-  </body>
-
-</html>
+:ET
