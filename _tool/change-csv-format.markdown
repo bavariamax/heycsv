@@ -5,7 +5,7 @@ categories:
 - Create & Format Settings
 position: 2
 site-title: Change format settings of a CSV File
-short-description: Change the format settings (separator, text quotation, etc.) of
+short-description: Change format settings (separator, text quotation, etc.) of
   a CSV file.
 color: "#318de5"
 ---
