@@ -9,6 +9,3 @@ short-description: Convert CSV files into SQL formatted files
 color: "#318de5"
 ---
 
-
-
-

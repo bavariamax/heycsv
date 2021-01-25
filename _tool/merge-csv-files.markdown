@@ -9,5 +9,3 @@ short-description: Merge two CSV files by Columns or Rows
 color: "#318de5"
 ---
 
-
-

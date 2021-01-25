@@ -9,6 +9,3 @@ short-description: Sort and filter a CSV file online in your browser
 color: "#318de5"
 ---
 
-
-
-

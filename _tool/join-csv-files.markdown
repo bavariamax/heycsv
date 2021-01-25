@@ -9,6 +9,3 @@ short-description: Join two CSV files by a common identifier column
 color: "#318de5"
 ---
 
-
-
-
