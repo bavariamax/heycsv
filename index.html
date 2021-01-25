@@ -41,6 +41,20 @@ site-title: "\U0001F44B HeyCSV - Free Solutions to all of your CSV File problems
   {% endfor %} 
 
 
+<h2>Latest Blog Posts</h2>
+
+<ul class="post-list">
+  {% assign sorted = site.blog | reverse %}
+    {% for post in sorted limit:5 %}
+      <li>
+        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+
+        <h2>
+          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+        </h2>
+      </li>
+    {% endfor %}
+ </ul>
 
 
 </div>
