@@ -45,4 +45,4 @@ defaults:
 permalink: pretty
 url: https://www.heycsv.com
 plugins:
-  - jekyll-sitemap
+- jekyll-sitemap
