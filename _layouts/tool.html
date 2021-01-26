@@ -9,12 +9,16 @@ layout: default
     <div class="page-description">{{ page.short-description }}</div>
   </header>
 
-  <div class="page-content">
-    {{ content }}
-  </div>
+  {% if content.size > 50 %}
+	<div class="page-content">
+	  {{ content }}
+	</div>
 
-  <h2>Oh No! You are too early, this tool is not ready, yet 😞. But you can sign up for our newsletter and get notified 😀.</h2>
-  
-
-  {% include newsletter.html %}
+  {% else %}
+	<div class="page-content">
+	 <h2>Oh No! You are too early, this tool is not ready, yet 😞. But you can sign up for our newsletter and get notified 😀.</h2>
+	  
+	 {% include newsletter.html %}
+	 </div>
+  {% endif %}
 </article>

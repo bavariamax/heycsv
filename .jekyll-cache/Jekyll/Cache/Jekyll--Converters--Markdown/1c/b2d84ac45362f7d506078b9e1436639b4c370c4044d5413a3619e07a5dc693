@@ -1,0 +1,35 @@
+I"'<table class="table table-sm">
+  <thead>
+    <tr>
+      <th scope="col">Type of data</th>
+      <th scope="col">#Rows</th>
+      <th scope="col">Size</th>
+      <th scope="col">Title Row</th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">Users</th>
+      <td>1,000</td>
+      <td>99 kB</td>
+      <td>id,uuid,first name,last name,email,created</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th scope="row">Users</th>
+      <td>1,000,000</td>
+      <td>101.9 MB</td>
+      <td>id,uuid,first name,last name,email,created</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th scope="row">Company Adresses</th>
+      <td>1,000</td>
+      <td>109 kB</td>
+      <td>company,street,zip code,city,phone number,company email</td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
+:ET

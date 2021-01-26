@@ -1,0 +1,68 @@
+I"<div>
+<p>Sample data is ideal for testing systems with expected data inputs and to test limits with high data volume. The data on this page can be downloaded and used for free. It contains fake data.
+</p>
+</div>
+
+<p>
+  <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+    Link with href
+  </a>
+  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+    Button with data-target
+  </button>
+</p>
+<div class="collapse" id="collapseExample">
+  <div class="card card-body">
+    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+  </div>
+</div>
+
+<table class="table table-sm">
+  <thead>
+    <tr>
+      <th scope="col">Type of data</th>
+      <th scope="col">#Rows</th>
+      <th scope="col">Size</th>
+      <th scope="col">Title Row</th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Users</td>
+      <td>1,000</td>
+      <td>99 kB</td>
+      <td>id,uuid,first name,last name,email,created</td>
+      <td><button type="button" class="btn btn-outline-primary btn-sm" data-toggle="collapse" data-target="#row1" aria-expanded="false" aria-controls="row1">Show first 10 rows</button> <button type="button" class="btn btn-primary btn-sm">Download</button></td>
+    </tr>
+    <tr class="collapse" id="row1">
+    	<td colspan="5">id,uuid,first name,last name,email,created
+1,409cf3b6-d1d9-43cd-b9ce-903dcdfbe1e0,Amber,Hunter,oali@hotmail.com,2020-03-01 22:06:54
+2,279b490e-eef6-4a07-9649-e6c6e734d8de,Barbara,Gutierrez,reyestimothy@reed.com,2021-01-16 01:57:59
+3,99e91a96-27f3-4daf-bdac-e02cbf3b1374,Melissa,Ross,kenneth39@colon.com,2021-01-05 19:06:30
+4,3f762d8f-827c-41c1-a97d-7e80550af6a3,Felicia,Cox,townsendryan@yahoo.com,2020-06-27 12:12:46
+5,d9132a8f-8d4f-426c-8944-7af4a4bcd04a,Ashley,Mathis,narellano@jordan.net,2020-05-11 05:13:55
+6,956d21a1-f1f5-4111-83ad-d9bc6fff6117,Brent,Roberson,shannon38@baird-romero.com,2020-05-17 09:44:09
+7,b17883da-e42c-440a-92d7-1c9978dbfda5,Travis,Marquez,ashley08@brooks.net,2021-01-15 07:20:06
+8,672cb320-5930-4d44-a7cd-a589fd3b4bd2,Briana,Hughes,brady91@gmail.com,2020-06-27 19:36:47
+9,b44ceb1c-4cff-4f62-bd74-b488373c42e7,Wendy,Rodriguez,james58@hotmail.com,2020-03-02 22:16:56
+10,0ff95b5d-fa2d-4b47-b95b-8e35dcc054a1,James,Ortiz,nicholas53@hotmail.com,2020-11-08 05:44:36</td>
+    </tr>
+    <tr>
+      <td>Users</td>
+      <td>1,000,000</td>
+      <td>101.9 MB</td>
+      <td>id,uuid,first name,last name,email,created</td>
+      <td><button type="button" class="btn btn-primary btn-sm">Download</button></td>
+    </tr>
+    <tr>
+      <td>Company Adresses</td>
+      <td>1,000</td>
+      <td>109 kB</td>
+      <td>company,street,zip code,city,phone number,company email</td>
+      <td><button type="button" class="btn btn-primary btn-sm">Download</button></td>
+    </tr>
+
+  </tbody>
+</table>
+:ET
