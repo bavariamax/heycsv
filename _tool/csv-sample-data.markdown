@@ -51,7 +51,7 @@ color: "#318de5"
       <td>1,000,000</td>
       <td>101.9 MB</td>
       <td>id,uuid,first name,last name,email,created</td>
-      <td><button type="button" class="btn btn-outline-primary btn-sm" data-toggle="collapse" data-target="#row2" aria-expanded="false" aria-controls="row2">First 10 rows</button> <a href="https://www.dropbox.com/s/muvfojx14t8nwxl/1M-sample-users.csv?dl=0"><button type="button" class="btn btn-primary btn-sm">Download</button></a></td>
+      <td><button type="button" class="btn btn-outline-primary btn-sm" data-toggle="collapse" data-target="#row2" aria-expanded="false" aria-controls="row2">First 10 rows</button> <a href="https://www.dropbox.com/s/muvfojx14t8nwxl/1M-sample-users.csv?dl=0" target="_blank"><button type="button" class="btn btn-primary btn-sm">Download</button></a></td>
     </tr>
         <tr class="collapse" id="row2">
     	<td colspan="5">id,uuid,first name,last name,email,created<br>
