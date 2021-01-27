@@ -2,7 +2,7 @@
 title: Welcome to HeyCSV
 date: 2021-01-19 13:23:00 +01:00
 position: 0
-image: "/uploads/HeyCSV%20-%20Welcome%20%231.png"
+image: "/uploads/HeyCSV-Welcome-#1.png"
 ---
 
 The standard "go-to" file format when it comes to exchanging structured data between companies or within large companies and its different IT systems still is in the year 2021 the [CSV file format](https://www.heycsv.com/blog/csv-file/). The reason is surely because it's so simple:
