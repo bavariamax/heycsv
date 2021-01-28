@@ -1,0 +1,159 @@
+I"=<div>
+<p>Sample data is ideal for testing systems with expected data inputs and to test limits with high data volume. The data on this page can be downloaded and used for free. It contains fake data.
+</p>
+</div>
+
+<table class="table table-sm">
+  <thead>
+    <tr>
+      <th scope="col">Type of data</th>
+      <th scope="col">#Rows</th>
+      <th scope="col">Size</th>
+      <th scope="col">Title Row</th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Users</td>
+      <td>1,000</td>
+      <td>99 kB</td>
+      <td>id,uuid,first name,last name,email,created</td>
+      <td><button type="button" class="btn btn-outline-primary btn-sm" data-toggle="collapse" data-target="#row1" aria-expanded="false" aria-controls="row1">First 10 rows</button> <a href="http://127.0.0.1:4000/downloads/sample-csv/1k-sample-users.csv"><button type="button" class="btn btn-primary btn-sm">Download</button></a></td>
+    </tr>
+    <tr class="collapse" id="row1">
+    	<td colspan="5">id,uuid,first name,last name,email,created<br />
+1,409cf3b6-d1d9-43cd-b9ce-903dcdfbe1e0,Amber,Hunter,oali@hotmail.com,2020-03-01 22:06:54<br />
+2,279b490e-eef6-4a07-9649-e6c6e734d8de,Barbara,Gutierrez,reyestimothy@reed.com,2021-01-16 01:57:59<br />
+3,99e91a96-27f3-4daf-bdac-e02cbf3b1374,Melissa,Ross,kenneth39@colon.com,2021-01-05 19:06:30<br />
+4,3f762d8f-827c-41c1-a97d-7e80550af6a3,Felicia,Cox,townsendryan@yahoo.com,2020-06-27 12:12:46<br />
+5,d9132a8f-8d4f-426c-8944-7af4a4bcd04a,Ashley,Mathis,narellano@jordan.net,2020-05-11 05:13:55<br />
+6,956d21a1-f1f5-4111-83ad-d9bc6fff6117,Brent,Roberson,shannon38@baird-romero.com,2020-05-17 09:44:09<br />
+7,b17883da-e42c-440a-92d7-1c9978dbfda5,Travis,Marquez,ashley08@brooks.net,2021-01-15 07:20:06<br />
+8,672cb320-5930-4d44-a7cd-a589fd3b4bd2,Briana,Hughes,brady91@gmail.com,2020-06-27 19:36:47<br />
+9,b44ceb1c-4cff-4f62-bd74-b488373c42e7,Wendy,Rodriguez,james58@hotmail.com,2020-03-02 22:16:56<br />
+10,0ff95b5d-fa2d-4b47-b95b-8e35dcc054a1,James,Ortiz,nicholas53@hotmail.com,2020-11-08 05:44:36</td>
+    </tr>
+    <tr>
+      <td>Users</td>
+      <td>100,000</td>
+      <td>10.1 MB</td>
+      <td>id,uuid,first name,last name,email,created</td>
+      <td><button type="button" class="btn btn-outline-primary btn-sm" data-toggle="collapse" data-target="#row1" aria-expanded="false" aria-controls="row1">First 10 rows</button> <a href="http://127.0.0.1:4000/downloads/sample-csv/1k-sample-users.csv"><button type="button" class="btn btn-primary btn-sm">Download</button></a></td>
+    </tr>
+    <tr class="collapse" id="row1">
+    	<td colspan="5">id,uuid,first name,last name,email,created<br />
+1,409cf3b6-d1d9-43cd-b9ce-903dcdfbe1e0,Amber,Hunter,oali@hotmail.com,2020-03-01 22:06:54<br />
+2,279b490e-eef6-4a07-9649-e6c6e734d8de,Barbara,Gutierrez,reyestimothy@reed.com,2021-01-16 01:57:59<br />
+3,99e91a96-27f3-4daf-bdac-e02cbf3b1374,Melissa,Ross,kenneth39@colon.com,2021-01-05 19:06:30<br />
+4,3f762d8f-827c-41c1-a97d-7e80550af6a3,Felicia,Cox,townsendryan@yahoo.com,2020-06-27 12:12:46<br />
+5,d9132a8f-8d4f-426c-8944-7af4a4bcd04a,Ashley,Mathis,narellano@jordan.net,2020-05-11 05:13:55<br />
+6,956d21a1-f1f5-4111-83ad-d9bc6fff6117,Brent,Roberson,shannon38@baird-romero.com,2020-05-17 09:44:09<br />
+7,b17883da-e42c-440a-92d7-1c9978dbfda5,Travis,Marquez,ashley08@brooks.net,2021-01-15 07:20:06<br />
+8,672cb320-5930-4d44-a7cd-a589fd3b4bd2,Briana,Hughes,brady91@gmail.com,2020-06-27 19:36:47<br />
+9,b44ceb1c-4cff-4f62-bd74-b488373c42e7,Wendy,Rodriguez,james58@hotmail.com,2020-03-02 22:16:56<br />
+10,0ff95b5d-fa2d-4b47-b95b-8e35dcc054a1,James,Ortiz,nicholas53@hotmail.com,2020-11-08 05:44:36</td>
+    </tr>
+    <tr>
+      <td>Users</td>
+      <td>1,000,000</td>
+      <td>101.9 MB</td>
+      <td>id,uuid,first name,last name,email,created</td>
+      <td><button type="button" class="btn btn-outline-primary btn-sm" data-toggle="collapse" data-target="#row2" aria-expanded="false" aria-controls="row2">First 10 rows</button> <a href="https://www.dropbox.com/s/muvfojx14t8nwxl/1M-sample-users.csv?dl=0" target="_blank"><button type="button" class="btn btn-primary btn-sm">Download</button></a></td>
+    </tr>
+        <tr class="collapse" id="row2">
+    	<td colspan="5">id,uuid,first name,last name,email,created<br />
+1,70968666-2c1e-44e0-a7e2-06baaa6674e6,Shane,Carter,rogerdominguez@yahoo.com,2020-07-20 05:17:53<br />
+2,8142b120-1864-4a62-8e4b-d144c0f8d6bb,Bethany,Ross,therman@gmail.com,2020-02-15 04:52:14<br />
+3,13303872-928d-4be4-8b21-0d0b26955f6f,Sylvia,Carter,cody15@hotmail.com,2020-12-31 10:55:50<br />
+4,b4cd2f46-f38c-4b3e-9c18-b7455636ea77,Kimberly,Mcdaniel,ellisjohn@yahoo.com,2020-01-26 15:32:44<br />
+5,5dbcf7ba-2441-4b20-80a3-941613a4ef3f,Glenn,Reynolds,camposstacy@wallace.com,2020-10-04 04:59:51<br />
+6,51ef3ae7-53bb-4a98-9819-3c6f3c8f4e26,Douglas,Howell,richard95@gmail.com,2020-11-01 17:37:15<br />
+7,fdab6778-ccf6-49a6-9bcb-7de49adcab03,Nicholas,Morris,marymaldonado@wyatt.info,2020-09-16 15:32:37<br />
+8,cbf3a15c-f64b-43ba-aac4-7197b31ecb73,Felicia,Hunt,vkeller@clark.com,2020-09-13 18:43:39<br />
+9,52931e02-dc99-4a69-8871-902469082326,Joseph,Jackson,sara67@hotmail.com,2020-11-24 23:44:35<br />
+10,138b1692-8472-404b-b11b-8572fc678e82,Mark,Garcia,angela09@gmail.com,2020-08-11 08:13:46</td>
+    </tr>
+    <tr>
+      <td>Company Adresses</td>
+      <td>1,000</td>
+      <td>109 kB</td>
+      <td>company,street,zip code,city,phone number,company email</td>
+      <td><button type="button" class="btn btn-outline-primary btn-sm" data-toggle="collapse" data-target="#row3" aria-expanded="false" aria-controls="row3">First 10 rows</button> <a href="http://127.0.0.1:4000/downloads/sample-csv/1k-sample-companies.csv"><button type="button" class="btn btn-primary btn-sm">Download</button></a></td>
+    </tr>
+    <tr class="collapse" id="row3">
+    	<td colspan="5">company,street,zip code,city,phone number,company email<br />
+Reed Ltd and Sons,69416 Jennifer Way Suite 640,16665,Rogersville,978-332-6510,amandachan@bird.com<br />
+Lamb-Moss LLC,21388 Anderson Well Apt. 062,01168,Jameshaven,+1-687-659-4940x26120,smithnicholas@harris.com<br />
+"Murray, Cox and Moses PLC",898 Monica Mount Apt. 542,14391,Sheltonton,001-889-436-6954x5456,xhinton@davis.com<br />
+"Avery, Hancock and Hernandez Inc",5843 Sarah Crescent Suite 769,94961,Lake Rachel,109.737.8575,petersonalice@turner.net<br />
+"Butler, Hardy and Meyer Inc",8004 Nicholas Spur,15296,North Edwardfurt,(348)608-5665x06590,wangabigail@crawford.info<br />
+"Colon, Jimenez and Holland Group",922 Irwin Neck,46761,West Olivia,(669)572-6936x71481,jamesbaker@mccormick-bruce.net<br />
+Meyer-Collins Ltd,43195 Timothy Mountains,62807,Taylorstad,001-372-222-3934x88756,hernandezpamela@sweeney-bowman.com<br />
+"Harvey, Strickland and Long PLC",2855 Casey Harbor Suite 492,51997,Jenniferton,+1-943-072-6902x9629,dylan58@sanchez.com<br />
+Bailey-Martinez PLC,74389 Rodriguez Cliffs Suite 585,80075,Kevinfurt,587-370-5805,russelldanielle@rodriguez.com<br />
+"Chavez, Mccarthy and Rodriguez Ltd",5284 Brenda Road Suite 580,30391,Ruthchester,+1-840-540-9712,kimberly26@case.net</td>
+    </tr>
+    <tr>
+      <td>Company Adresses</td>
+      <td>100,000</td>
+      <td>10.8 MB</td>
+      <td>company,street,zip code,city,phone number,company email</td>
+      <td><button type="button" class="btn btn-outline-primary btn-sm" data-toggle="collapse" data-target="#row4" aria-expanded="false" aria-controls="row4">First 10 rows</button> <a href="http://127.0.0.1:4000/downloads/sample-csv/100k-sample-companies.csv"><button type="button" class="btn btn-primary btn-sm">Download</button></a></td>
+    </tr>
+    <tr class="collapse" id="row4">
+    	<td colspan="5">company,street,zip code,city,phone number,company email<br />
+"Campbell, Jones and Edwards Ltd",2358 Hudson Path,90223,East Beth,018.228.6633,adean@hanson.info<br />
+Garcia-Lopez Group,4950 Jackson Lock Suite 096,02992,Andersonshire,+1-908-786-1170x2435,sarahallen@rivera.com<br />
+"Mcguire, Fowler and Hobbs PLC",4643 Stevens Heights Suite 276,17222,Port Bradleymouth,+1-935-033-4688,jameskidd@campbell.info<br />
+"Hayes, Garner and Zuniga Inc",84552 Dawson Ford Suite 681,07022,Villaside,+1-435-304-1076x04610,thomas11@sanders.org<br />
+Lee Inc Ltd,2233 Spencer Manor,62585,North Brian,+1-758-302-7262x557,tylerdaniels@ponce.com<br />
+Bowman Group Group,7530 Vaughn Inlet,12483,New Amberville,802.185.4316,carrillokayla@garner-bauer.com<br />
+Snyder LLC Ltd,72278 Rush Views,05878,Kellyberg,627-614-1980x16831,cgreen@miles.com<br />
+Espinoza-Marquez PLC,040 Hoover Islands,30149,Mccannbury,396-948-4920,travis36@wright.com<br />
+"Norton, Allen and Jenkins Inc",083 Burns Run,36924,Wilsonberg,789-706-9190,kenneth75@schmidt.biz<br />
+Robinson LLC Ltd,89816 Hernandez Skyway Suite 342,44508,Robertsonmouth,940-707-5948x67685,hoffmanmichelle@bullock.org</td>
+    </tr>
+    <tr>
+      <td>Products</td>
+      <td>1,000</td>
+      <td>256 kB</td>
+      <td>Row,ID,Name,Description,Brand,Category,Price</td>
+      <td><button type="button" class="btn btn-outline-primary btn-sm" data-toggle="collapse" data-target="#row5" aria-expanded="false" aria-controls="row5">First 10 rows</button> <a href="http://127.0.0.1:4000/downloads/sample-csv/1k-sample-products.csv"><button type="button" class="btn btn-primary btn-sm">Download</button></a></td>
+    </tr>
+    <tr class="collapse" id="row5">
+    	<td colspan="5">Row,ID,Name,Description,Brand,Category,Price<br />
+1,1516960558066,Cross-platform secondary moderator,Listen capital daughter assume still argue. Build bad customer. Firm model present inside floor prove gas. Two watch pressure discuss try hold subject. Tough information enjoy here certainly live real.,Pearson Specter Litt,Electronics,466.61<br />
+2,6294714983160,Front-line uniform intranet,Rise arrive reveal hospital. Form simply later when. Person determine size debate moment. View community painting attorney. Cost worker information tax meet compare. Reduce always goal career get table.,Delos Inc,Tools &amp; Accessories,3.87<br />
+3,7646141708431,Sharable intermediate pricing structure,New candidate maintain week common nor. Both past final sport apply wife current. Nation pull pick drop response. Add career organization head form. Center culture total. Better center act blood word team contain.,Weyland Yutani,Stationary &amp; Cards,421.69<br />
+4,3585729282496,Polarized neutral support,High his officer. Stand wait series leave grow. Back would feel. Energy effort character hotel together serious tree. Class policy each program. Just player although range send road whom.,The Estelle,Electronics,482.47<br />
+5,8218833098824,Integrated tangible groupware,Year trouble age chance. Test describe trade American write her second. Here light radio reflect form far sort.,Yubaba,Personal Care,211.55<br />
+6,8572332669405,Profit-focused methodical leverage,Executive new citizen he bed. Relate case here society later plan different page. Situation international rich certain. Produce price force factor near might local. Shoulder hospital exactly public above year fall new. Major specific condition serious tax fund bring list.,Entertainment 720,Watches,188.84<br />
+7,3636593343643,Seamless client-server time-frame,Mean computer country and. Response return rich plant feel. Employee mind behind leave officer dark professional. Hand democratic five money security home on. During Mrs us explain which week.,Weyland Yutani,Stationary &amp; Cards,342.4<br />
+8,7731527680811,Inverse even-keeled middleware,Program get college. Style item different get still recently same. Son throw visit agency nearly person song Congress. Check today American raise expect.,Hooli,Fashion,357.42<br />
+9,8724839556218,Switchable demand-driven hierarchy,Ok son other evidence vote suddenly. Rest live wide north newspaper question free list. Position administration within business across act scientist. Region fill happy. Would standard today. Job next difference thought executive pull wish whether.,Aperture Science,Gifts,151.25<br />
+10,8962722415253,Distributed dedicated superstructure,Floor give stop. Budget pay ball human itself company level. Nor style throughout police authority season teach. Add room between protect special although focus. Industry without source suffer prove same.,Aviato,Fashion,334.29</td>
+    </tr>	
+       <tr>
+      <td>Products</td>
+      <td>10,000</td>
+      <td>2.6 MB</td>
+      <td>Row,ID,Name,Description,Brand,Category,Price</td>
+      <td><button type="button" class="btn btn-outline-primary btn-sm" data-toggle="collapse" data-target="#row6" aria-expanded="false" aria-controls="row6">First 10 rows</button> <a href="http://127.0.0.1:4000/downloads/sample-csv/10k-sample-products.csv"><button type="button" class="btn btn-primary btn-sm">Download</button></a></td>
+    </tr>
+    <tr class="collapse" id="row6">
+    	<td colspan="5">Row,ID,Name,Description,Brand,Category,Price<br />
+1,1237663720337,Compatible interactive success,Teacher face collection parent now reveal by. Again house authority which suffer generation start. Rather whether really among pattern cut right. Part ever however hospital account station. Member view sit suggest door future expert technology. Father book street marriage.,Stratton Oakmont,Sportswear &amp; Gear,472.78<br />
+2,8396046134567,Stand-alone 4thgeneration leverage,Show within kitchen. Me cell truth must response. Situation imagine oil throughout American though reflect visit.,Rekall,Plants &amp; Gardening,202.3<br />
+3,4796045793439,Secured eco-centric instruction set,Look wrong establish different article. Art treatment could debate. That instead as month discover first half contain. Writer form decision half.,Yubaba,Bed &amp; Bath,458.82<br />
+4,0866991590698,Ameliorated intangible portal,Base must trial me thus. Nice increase body notice before. Black country hard oil such.,NERV,Shoes,376.1<br />
+5,6281924876696,Synchronized fresh-thinking function,Although main sure line must relationship choose positive. Fear according authority push least language need. Part be lead agreement reality. Tree somebody miss number.,The Derek Zoolander,Tools &amp; Accessories,431.56<br />
+6,5702666624983,Focused dedicated middleware,Evidence everyone difficult style threat theory. Year song shake morning order. World range task against start street. Lead same agree debate age. Beat Mrs nice model. Between manager system.,"Dunder Mifflin, Inc.",Jewelry,260.7<br />
+7,0955283312978,Visionary grid-enabled data-warehouse,Wife within suffer. Want music run likely between realize movie military. Up relate too describe war hot team often. Positive thing item suggest.,Oceanic Airlines,Bed &amp; Bath,141.48<br />
+8,3320301322098,Optimized tertiary emulation,Race result two debate debate meeting almost change. Not system current study take house. Page sing wall customer me happen. Bill seem walk very attack today media. It specific nature other community one. Forget woman should age sense.,Sterling Cooper,Personal Care,343.81<br />
+9,3376779359920,Grass-roots value-added Graphic Interface,Prove hit increase wait student outside often. Commercial far knowledge central yes. Beat nearly choose then admit culture. Meet all manage every check child executive. Value child side wish defense arm.,Hooper's Store,Bed &amp; Bath,498.57<br />
+10,3545102784214,Fully-configurable coherent throughput,Build world point talk civil support. Result gas media last reflect. Life available movie control common culture. Ten teacher put billion. Difficult cost picture together.,Macmillan Toys,Tools &amp; Accessories,226.58</td>
+    </tr>		
+  </tbody>
+</table>
+:ET
