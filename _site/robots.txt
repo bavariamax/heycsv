@@ -1,4 +1,5 @@
-Sitemap: /sitemap.xml
 User-agent: *
 Disallow: /thank-you/
 Allow: /
+
+Sitemap: https://www.heycsv.com/sitemap.xml
