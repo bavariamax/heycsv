@@ -1,0 +1,149 @@
+I"W<div id="picker" style="height: 400px;"></div>
+
+<script src="//static.filestackapi.com/filestack-js/3.x.x/filestack.min.js"></script>
+
+<script type="text/javascript" charset="utf-8">
+const client = filestack.init("AaZv0uyTZmBD0H4g9mWbAz");
+
+
+
+const options = {
+	displayMode: "dropPane",
+	container: "picker",
+    onFileSelected: file => {
+        // If you throw any error in this function it will reject the file selection.
+        // The error message will be displayed to the user as an alert.
+        if (file.size > 100000 * 1000) {
+            throw new Error('File too big, select something smaller than 1MB');
+        }
+    },
+    fromSources: ["local_file_system", "url"],
+    accept: ["text/*"],
+    customText: {
+    	'Select Files to Upload': 'Select CSV File to Upload',
+    	'Drag and Drop, Copy and Paste Files': 'Drag and Drop CSV File to Upload or Click and Select'
+    },
+    onFileUploadFinished: file => {
+		document.querySelector("#picker").style.display = "none";
+    	createGrid(file.url);
+    }
+};
+
+client.picker(options).open();
+</script>
+
+<div id="csvGrid" style="height: 1000px; width: 1400px;" class="ag-theme-alpine"></div>
+
+<script type="text/javascript" charset="utf-8">
+
+      function createGrid(url){ 
+
+	      const gridOptions = {
+	        statusBar: {
+	          statusPanels: [
+	            {
+	              statusPanel: "agTotalAndFilteredRowCountComponent",
+	              key: "totalAndFilter",
+	              align: "left"
+	            },
+	            { statusPanel: "agSelectedRowCountComponent", align: "left" },
+	            { statusPanel: "agAggregationComponent", align: "right" }
+	          ]
+	        },
+	        defaultColDef: {
+	          minWidth: 50,
+	          sortable: true,
+	          filter: true,
+	          resizable: true,
+	          editable: true,
+	          enableRowGroup: true,
+	          enableValue: true,
+	          enablePivot: true
+	        },
+	        rowSelection: "multiple",
+	        singleClickEdit: false,
+	        enableCellChangeFlash: true,
+	        enableFillHandle: true,
+	        debug: true,
+	        enableRangeSelection: true,
+	        groupUseEntireRow: true,
+	        suppressDragLeaveHidesColumns: true,
+	        suppressMakeColumnVisibleAfterUnGroup: true,
+	        rowGroupPanelShow: "always",
+	        sideBar: {
+          		toolPanels: ["columns", "filters"]
+        	}
+	     };
+
+	      // lookup the container we want the Grid to use
+	      const eGridDiv = document.querySelector("#csvGrid");
+
+	      // create the grid passing in the div to use together with the columns & data we want to use
+	      new agGrid.Grid(eGridDiv, gridOptions);
+
+
+
+	      // import csv
+	      const Http = new XMLHttpRequest();
+	      Http.open("GET", url);
+	      Http.send();
+
+	      Http.onreadystatechange = (e) => {
+	        console.log("csv file load success");
+	        csv = Http.responseText;
+
+	        // csv prep
+	        var delimiter = ",";
+	        var lines = csv.split("\n");
+
+	        // create header row
+	        var headers = lines[0].split(delimiter);
+	        var colDefs = createCols(headers);
+	        gridOptions.api.setColumnDefs(colDefs);
+	        console.log(headers);
+
+	        // create rows
+	        var rowData = JSON.parse(csvJSON(lines, delimiter));
+	        gridOptions.api.setRowData(rowData);
+
+	      };
+
+      }
+
+      function createCols(headers) {
+        console.log("createCols");
+
+        var colCount = headers.length;
+        var columns = [];
+
+        for (var col = 0; col < colCount; col++) {
+          var colDef = { field: headers[col] };
+          columns.push(colDef);
+        }
+
+        return columns;
+      }
+
+      function csvJSON(lines, delimiter) {
+        console.log("csvJSON");
+
+        var result = [];
+        var headers = lines[0].split(delimiter);
+
+        for (var i = 1; i < lines.length; i++) {
+          var obj = {};
+          var currentline = lines[i].split(delimiter);
+
+          for (var j = 0; j < headers.length; j++) {
+            obj[headers[j]] = currentline[j];
+          }
+
+          result.push(obj);
+        }
+
+        //return result; //JavaScript object
+        return JSON.stringify(result); //JSON
+      }
+    </script>
+
+:ET

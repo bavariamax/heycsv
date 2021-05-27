@@ -1,0 +1,33 @@
+I"3<div id="picker" style="height: 400px;"></div>
+
+<script src="//static.filestackapi.com/filestack-js/3.x.x/filestack.min.js"></script>
+
+<script type="text/javascript" charset="utf-8">
+const client = filestack.init("AaZv0uyTZmBD0H4g9mWbAz");
+
+const options = {
+	displayMode: "dropPane",
+	container: "picker",
+    onFileSelected: file => {
+        // If you throw any error in this function it will reject the file selection.
+        // The error message will be displayed to the user as an alert.
+        if (file.size > 1000 * 1000) {
+            throw new Error('File too big, select something smaller than 1MB');
+        }
+    },
+    fromSources: ["local_file_system"],
+    accept: ["text/*"],
+    customText: {
+    	'Select Files to Upload': 'Select CSV File to Upload',
+    	'Drag and Drop, Copy and Paste Files': 'Drag and Drop CSV File to Upload or Click and Select'
+    },
+    onFileUploadFinished: file => {
+    	alert(file.url);
+    }
+};
+
+client.picker(options).open();
+</script>
+
+<div id="myGrid" style="height: 800px; width: 1000px;" class="ag-theme-alpine"></div>
+:ET

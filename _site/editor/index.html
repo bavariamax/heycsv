@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>CSV Editor - HeyCSV</title>
+  <meta name="description" content="">
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-MHTBK2T');</script>
+<!-- End Google Tag Manager -->
+
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+
+
+ <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700" rel="stylesheet">
+  <link rel="stylesheet" href="http://127.0.0.1:4000/css/main.css">
+
+  <link rel="canonical" href="http://127.0.0.1:4000/editor/">
+
+<link rel="apple-touch-icon" sizes="180x180" href="http://127.0.0.1:4000/assets/favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://127.0.0.1:4000/assets/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="http://127.0.0.1:4000/assets/favicon/favicon-16x16.png">
+<link rel="manifest" href="http://127.0.0.1:4000/assets/favicon/site.webmanifest">
+<link rel="shortcut icon" href="http://127.0.0.1:4000/assets/favicon/favicon.ico">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="msapplication-config" content="http://127.0.0.1:4000/assets/favicon/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
+
+
+<!-- AG Grid -->
+<script src="https://unpkg.com/@ag-grid-enterprise/all-modules@25.2.0/dist/ag-grid-enterprise.min.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/ag-grid-community/dist/styles/ag-grid.css"/>
+<link rel="stylesheet" href="https://unpkg.com/ag-grid-community/dist/styles/ag-theme-alpine.css"/>
+<!-- AG Grid -->
+
+</head>
+
+
+  <body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MHTBK2T"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+    <header class="site-header">
+
+  <div class="wrapper-header">
+
+    <a class="site-title" href="http://127.0.0.1:4000/"><img src="http://127.0.0.1:4000/assets/heycsv_logo_transp.svg" alt="HeyCSV Logo" /></a>
+
+	<nav class="site-nav">
+      <a href="#" class="menu-icon">
+        <svg viewBox="0 0 18 15">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </a>
+
+      <div class="trigger">
+          <a class="nav-link" href="http://127.0.0.1:4000/blog/">Blog</a>
+      </div>
+  </nav>
+  </div>
+
+</header>
+
+
+    <div class="page-content">
+
+    <div class="wrapper">
+<div class="page-content">
+
+<button onclick="onBtnDemo1()">Try Demo Companies</button>
+<button onclick="onBtnDemo2()">Try Demo Products</button>
+<button onclick="onBtnDemo3()">Try Demo Users</button>
+<button onclick="onBtnReset()">Reset</button>
+
+<div id="inputArea">
+	<div id="picker" style="height: 200px;"></div>
+	<div style="padding: 30px;">Or paste text below:</div>
+	<div><textarea id="pasteText" style="width:100%; height: 200px;"></textarea>
+		<button onclick="inputGrid()">Load Text into Editor</button></div>
+</div>
+
+</div>
+</div>
+
+<div id="csvGrid" style="height: 1000px; width: 100%; display: none;" class="ag-theme-balham"></div>
+
+<script src="//static.filestackapi.com/filestack-js/3.x.x/filestack.min.js"></script>
+
+<script type="text/javascript" charset="utf-8">
+
+
+//
+// Buttons
+// 
+
+function onBtnDemo1() {
+  if(gridOptions.api) gridOptions.api.destroy();
+  createGridUrl("https://www.heycsv.com/downloads/sample-csv/1k-sample-companies.csv");
+}
+
+function onBtnDemo2() {
+  if(gridOptions.api) gridOptions.api.destroy();
+  createGridUrl("https://www.heycsv.com/downloads/sample-csv/1k-sample-products.csv");
+}
+
+function onBtnDemo3() {
+  if(gridOptions.api) gridOptions.api.destroy();
+  createGridUrl("https://www.heycsv.com/downloads/sample-csv/1k-sample-users.csv");
+}
+
+function onBtnReset() {
+  document.querySelector("#inputArea").style.display = "block";
+  if(gridOptions.api) gridOptions.api.destroy();
+  document.querySelector("#csvGrid").style.display = "none";
+}
+
+// 
+// Paste 
+//
+function inputGrid(){
+	var textinput = document.getElementById("pasteText").value;
+	console.log(textinput);
+	createGrid(textinput);
+}
+
+
+//
+// Filestack
+// 
+const client = filestack.init("AaZv0uyTZmBD0H4g9mWbAz");
+
+const options = {
+	displayMode: "dropPane",
+	container: "picker",
+    onFileSelected: file => {
+        // If you throw any error in this function it will reject the file selection.
+        // The error message will be displayed to the user as an alert.
+        if (file.size > 100000 * 1000) {
+            throw new Error('File too big, select something smaller than 1MB');
+        }
+    },
+    fromSources: ["local_file_system", "url"],
+    accept: ["text/*"],
+    customText: {
+    	'Select Files to Upload': 'Select CSV File to Upload',
+    	'Drag and Drop, Copy and Paste Files': 'Drag and Drop CSV File to Upload or Click and Select'
+    },
+    onFileUploadFinished: file => {	
+    	createGridUrl(file.url);
+    }
+};
+
+client.picker(options).open();
+
+
+
+//
+// Grid
+// 
+ 	  // lookup the container we want the Grid to use
+	  const eGridDiv = document.querySelector("#csvGrid");
+
+ 	  var gridOptions = {};
+
+ 	  function createGridUrl(url){
+		  console.log("createGridUrl");
+
+	      const Http = new XMLHttpRequest();
+	      Http.open("GET", url);
+	      Http.send();
+
+	      Http.onreadystatechange = function() {
+
+	      	if(Http.readyState === XMLHttpRequest.DONE) {
+		        var status = Http.status;
+		        if (status === 0 || (status >= 200 && status < 400)) {
+			        console.log("csv file load success");
+			        text = Http.responseText;
+			        createGrid(text);
+			     } else {
+      				console.log("Oh no! There has been an error with the request!"); 
+    			}
+	    	}
+	      };
+ 	  }
+
+
+      function createGrid(text){ 
+
+      	document.querySelector("#inputArea").style.display = "none";
+      	document.querySelector("#csvGrid").style.display = "block";
+
+	      gridOptions = {
+	        statusBar: {
+	          statusPanels: [
+	            {
+	              statusPanel: "agTotalAndFilteredRowCountComponent",
+	              key: "totalAndFilter",
+	              align: "left"
+	            },
+	            { statusPanel: "agSelectedRowCountComponent", align: "left" },
+	            { statusPanel: "agAggregationComponent", align: "right" }
+	          ]
+	        },
+	        defaultColDef: {
+	          minWidth: 50,
+	          sortable: true,
+	          filter: true,
+	          resizable: true,
+	          editable: true,
+	          enableRowGroup: true,
+	          enableValue: true,
+	          enablePivot: true
+	        },
+	        rowSelection: "multiple",
+	        singleClickEdit: false,
+	        enableCellChangeFlash: true,
+	        enableFillHandle: true,
+	        debug: true,
+	        enableRangeSelection: true,
+	        rowDragManaged: true,
+	        enableMultiRowDragging: true,
+	        rowSelection: "multiple",
+	        undoRedoCellEditing: true,
+    		undoRedoCellEditingLimit: 50,
+	        animateRows: true,
+	        groupUseEntireRow: true,
+	        suppressDragLeaveHidesColumns: true,
+	        suppressMakeColumnVisibleAfterUnGroup: true,
+	        rowGroupPanelShow: "always",
+	        sideBar: {
+          		toolPanels: ["columns", "filters"]
+        	}
+	     };
+
+	      // create the grid passing in the div to use together with the columns & data we want to use
+	      new agGrid.Grid(eGridDiv, gridOptions);
+
+	      // csv config
+	      var delimiter = ",";
+
+	      // parse text to get csv rows
+	      var csvRows = parseCSV(text, delimiter);
+	      console.log(csvRows[0].length + " Cols");
+	      console.log(csvRows.length + " Rows");
+
+	      // define header row and cols
+	      var colDefs = createCols(csvRows[0]);
+	      gridOptions.api.setColumnDefs(colDefs);
+	      console.log(csvRows[0]);
+	      
+
+	      // create rows
+	      var rowData = JSON.parse(parseCSVtoObjects(csvRows));
+	      console.log(rowData);
+	      gridOptions.api.setRowData(rowData);
+	      console.log("rows created");
+
+      }
+
+      function createCols(headers) {
+        console.log("createCols");
+
+        var colCount = headers.length;
+        var columns = [];
+
+        for (var col = 0; col < colCount; col++) {
+          if (col == 0) {
+            var colDef = { 
+              field: headers[col], 
+              rowDrag: true, 
+              headerCheckboxSelection: true,
+              checkboxSelection: true };
+          } else {
+            var colDef = { field: headers[col] };
+          }
+          columns.push(colDef);
+        }
+
+        return columns;
+      }
+
+	    function parseCSV(str, delimiter) {
+	    	console.log("parse Start");
+		    var arr = [];
+		    var quote = false;
+		    for (var row = col = c = 0; c < str.length; c++) {
+		        var cc = str[c], nc = str[c+1];
+		        arr[row] = arr[row] || [];
+		        arr[row][col] = arr[row][col] || '';
+
+		        if (cc == '"' && quote && nc == '"') { arr[row][col] += cc; ++c; continue; }  
+		        if (cc == '"') { quote = !quote; continue; }
+		        if (cc == delimiter && !quote) { ++col; continue; }
+		        if (cc == '\r' && nc == '\n' && !quote) { ++row; col = 0; ++c; continue; }
+		        if (cc == '\n' && !quote) { ++row; col = 0; continue; }
+		        if (cc == '\r' && !quote) { ++row; col = 0; continue; }
+
+		        arr[row][col] += cc;
+		    }
+		    console.log("parse End");
+		    return arr;
+		}
+
+
+      function parseCSVtoObjects(csvRows, /* optional */ columnNames) {
+        console.log("CSVtoObject start");
+
+        var firstDataRow = 0;
+        if (!columnNames) {
+          columnNames = csvRows[0];
+          firstDataRow = 1;
+        }
+
+        var result = [];
+        for (var i = firstDataRow, n = csvRows.length; i < n; i++) {
+          var rowObject = {};
+          var row = csvRows[i];
+          for (
+            var j = 0, m = Math.min(row.length, columnNames.length);
+            j < m;
+            j++
+          ) {
+            var columnName = columnNames[j];
+            var columnValue = row[j];
+            rowObject[columnName] = columnValue;
+          }
+          result.push(rowObject);
+        }
+
+        console.log("CSVtoObject end");
+        return JSON.stringify(result); //JSON
+      }
+
+
+    </script>
+
+
+
+    </div>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+      <nav class="site-nav">
+      <a href="#" class="menu-icon">
+        <svg viewBox="0 0 18 15">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </a>
+
+
+      
+
+
+    </nav>
+
+
+
+  </div>
+
+</footer>
+
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  </body>
+
+</html>
+
