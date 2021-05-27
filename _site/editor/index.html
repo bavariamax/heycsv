@@ -83,6 +83,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <button onclick="onBtnDemo2()">Try Demo Products</button>
 <button onclick="onBtnDemo3()">Try Demo Users</button>
 <button onclick="onBtnReset()">Reset</button>
+Delimiter: <input type="text" name="" id="delimiterInput" value="," style="width:30px; text-align: center;" />
 
 <div id="inputArea">
 	<div id="picker" style="height: 200px;"></div>
@@ -199,6 +200,8 @@ client.picker(options).open();
 
       function createGrid(text){ 
 
+      	var delimiter = document.getElementById("delimiterInput").value;
+
       	document.querySelector("#inputArea").style.display = "none";
       	document.querySelector("#csvGrid").style.display = "block";
 
@@ -247,9 +250,6 @@ client.picker(options).open();
 
 	      // create the grid passing in the div to use together with the columns & data we want to use
 	      new agGrid.Grid(eGridDiv, gridOptions);
-
-	      // csv config
-	      var delimiter = ",";
 
 	      // parse text to get csv rows
 	      var csvRows = parseCSV(text, delimiter);

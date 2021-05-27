@@ -1,19 +1,11 @@
----
-title: CSV Editor
-date: 2021-05-26 16:05:00 +01:00
-position: 4
-layout: editor
-site-title: CSV Editor - HeyCSV
----
-
-<div class="wrapper">
+I"`<div class="wrapper">
 <div class="page-content">
 
 <button onclick="onBtnDemo1()">Try Demo Companies</button>
 <button onclick="onBtnDemo2()">Try Demo Products</button>
 <button onclick="onBtnDemo3()">Try Demo Users</button>
 <button onclick="onBtnReset()">Reset</button>
-Delimiter: <input type="text" name="" id="delimiterInput" value="," style="width:30px; text-align: center;">
+<input type="text" name="" id="delimiterInput" />
 
 <div id="inputArea">
 	<div id="picker" style="height: 200px;"></div>
@@ -28,6 +20,7 @@ Delimiter: <input type="text" name="" id="delimiterInput" value="," style="width
 <div id="csvGrid" style="height: 1000px; width: 100%; display: none;" class="ag-theme-balham"></div>
 
 <script src="//static.filestackapi.com/filestack-js/3.x.x/filestack.min.js"></script>
+
 <script type="text/javascript" charset="utf-8">
 
 
@@ -129,8 +122,6 @@ client.picker(options).open();
 
       function createGrid(text){ 
 
-      	var delimiter = document.getElementById("delimiterInput").value;
-
       	document.querySelector("#inputArea").style.display = "none";
       	document.querySelector("#csvGrid").style.display = "block";
 
@@ -179,6 +170,9 @@ client.picker(options).open();
 
 	      // create the grid passing in the div to use together with the columns & data we want to use
 	      new agGrid.Grid(eGridDiv, gridOptions);
+
+	      // csv config
+	      var delimiter = ",";
 
 	      // parse text to get csv rows
 	      var csvRows = parseCSV(text, delimiter);
@@ -275,3 +269,5 @@ client.picker(options).open();
 
 
     </script>
+
+:ET
