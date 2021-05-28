@@ -1,6 +1,6 @@
 ---
 title: CSV Editor
-date: 2021-05-26 17:05:00 +02:00
+date: 2021-05-26 16:05:00 +01:00
 position: 4
 layout: editor
 site-title: CSV Editor - HeyCSV
@@ -208,12 +208,18 @@ client.picker(options).open();
         for (var col = 0; col < colCount; col++) {
           if (col == 0) {
             var colDef = { 
+              colId: "Col_" + col,
               field: headers[col], 
+              headerName: headers[col], 
               rowDrag: true, 
               headerCheckboxSelection: true,
               checkboxSelection: true };
           } else {
-            var colDef = { field: headers[col] };
+            var colDef = { 
+              colId: "Col_" + col,
+              field: headers[col],
+              headerName: headers[col]
+          	};
           }
           columns.push(colDef);
         }

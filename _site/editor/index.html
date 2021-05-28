@@ -279,12 +279,18 @@ client.picker(options).open();
         for (var col = 0; col < colCount; col++) {
           if (col == 0) {
             var colDef = { 
+              colId: "Col_" + col,
               field: headers[col], 
+              headerName: headers[col], 
               rowDrag: true, 
               headerCheckboxSelection: true,
               checkboxSelection: true };
           } else {
-            var colDef = { field: headers[col] };
+            var colDef = { 
+              colId: "Col_" + col,
+              field: headers[col],
+              headerName: headers[col]
+          	};
           }
           columns.push(colDef);
         }

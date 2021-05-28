@@ -1,48 +1,68 @@
-I"T<div class="wrapper">
+I"e<div class="wrapper">
 <div class="page-content">
 
 <button onclick="onBtnDemo1()">Try Demo Companies</button>
 <button onclick="onBtnDemo2()">Try Demo Products</button>
 <button onclick="onBtnDemo3()">Try Demo Users</button>
 <button onclick="onBtnReset()">Reset</button>
+Delimiter: <input type="text" name="" id="delimiterInput" value="," style="width:30px; text-align: center;" />
 
 <div id="inputArea">
 	<div id="picker" style="height: 200px;"></div>
 	<div style="padding: 30px;">Or paste text below:</div>
-	<div><textarea id="dropText" style="width:100%; height: 200px;"></textarea></div>
+	<div><textarea id="pasteText" style="width:100%; height: 200px;"></textarea>
+		<button onclick="inputGrid()">Load Text into Editor</button></div>
 </div>
 
 </div>
 </div>
+
+<div id="csvGrid" style="height: 1000px; width: 100%; display: none;" class="ag-theme-balham"></div>
 
 <script src="//static.filestackapi.com/filestack-js/3.x.x/filestack.min.js"></script>
 
 <script type="text/javascript" charset="utf-8">
 
+
+//
+// Buttons
+// 
+
 function onBtnDemo1() {
-  if(gridOptions) gridOptions.api.destroy();
+  if(gridOptions.api) gridOptions.api.destroy();
   createGridUrl("https://www.heycsv.com/downloads/sample-csv/1k-sample-companies.csv");
 }
 
 function onBtnDemo2() {
-  if(gridOptions) gridOptions.api.destroy();
+  if(gridOptions.api) gridOptions.api.destroy();
   createGridUrl("https://www.heycsv.com/downloads/sample-csv/1k-sample-products.csv");
 }
 
 function onBtnDemo3() {
-  if(gridOptions) gridOptions.api.destroy();
+  if(gridOptions.api) gridOptions.api.destroy();
   createGridUrl("https://www.heycsv.com/downloads/sample-csv/1k-sample-users.csv");
 }
 
 function onBtnReset() {
   document.querySelector("#inputArea").style.display = "block";
-  if(gridOptions && gridOptions.api) gridOptions.api.destroy();
+  if(gridOptions.api) gridOptions.api.destroy();
   document.querySelector("#csvGrid").style.display = "none";
 }
 
+// 
+// Paste 
+//
+function inputGrid(){
+	var textinput = document.getElementById("pasteText").value;
+	console.log(textinput);
+	createGrid(textinput);
+}
+
+
+//
+// Filestack
+// 
 const client = filestack.init("AaZv0uyTZmBD0H4g9mWbAz");
-
-
 
 const options = {
 	displayMode: "dropPane",
@@ -66,16 +86,19 @@ const options = {
 };
 
 client.picker(options).open();
-</script>
 
-<div id="csvGrid" style="height: 1000px; width: 100%; display: none;" class="ag-theme-balham"></div>
 
-<script type="text/javascript" charset="utf-8">
 
- 	  var gridOptions;
+//
+// Grid
+// 
+ 	  // lookup the container we want the Grid to use
+	  const eGridDiv = document.querySelector("#csvGrid");
+
+ 	  var gridOptions = {};
 
  	  function createGridUrl(url){
-		   console.log("createGridUrl");
+		  console.log("createGridUrl");
 
 	      const Http = new XMLHttpRequest();
 	      Http.open("GET", url);
@@ -98,6 +121,8 @@ client.picker(options).open();
 
 
       function createGrid(text){ 
+
+      	var delimiter = document.getElementById("delimiterInput").value;
 
       	document.querySelector("#inputArea").style.display = "none";
       	document.querySelector("#csvGrid").style.display = "block";
@@ -145,16 +170,9 @@ client.picker(options).open();
         	}
 	     };
 
-	      // lookup the container we want the Grid to use
-	      const eGridDiv = document.querySelector("#csvGrid");
-
 	      // create the grid passing in the div to use together with the columns & data we want to use
 	      new agGrid.Grid(eGridDiv, gridOptions);
 
-	      // csv config
-	      var delimiter = ",";
-
-	      console.log(text);
 	      // parse text to get csv rows
 	      var csvRows = parseCSV(text, delimiter);
 	      console.log(csvRows[0].length + " Cols");
@@ -164,9 +182,11 @@ client.picker(options).open();
 	      var colDefs = createCols(csvRows[0]);
 	      gridOptions.api.setColumnDefs(colDefs);
 	      console.log(csvRows[0]);
+	      
 
 	      // create rows
 	      var rowData = JSON.parse(parseCSVtoObjects(csvRows));
+	      console.log(rowData);
 	      gridOptions.api.setRowData(rowData);
 	      console.log("rows created");
 
@@ -181,12 +201,18 @@ client.picker(options).open();
         for (var col = 0; col < colCount; col++) {
           if (col == 0) {
             var colDef = { 
+              colId: "Col_" + col,
               field: headers[col], 
+              headerName: headers[col], 
               rowDrag: true, 
               headerCheckboxSelection: true,
               checkboxSelection: true };
           } else {
-            var colDef = { field: headers[col] };
+            var colDef = { 
+              colId: "Col_" + col,
+              field: headers[col],
+              headerName: headers[col]
+          	};
           }
           columns.push(colDef);
         }
