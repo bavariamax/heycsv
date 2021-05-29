@@ -1,4 +1,4 @@
-I"e<div class="wrapper">
+I"O*<div class="wrapper">
 <div class="page-content">
 
 <button onclick="onBtnDemo1()">Try Demo Companies</button>
@@ -6,6 +6,7 @@
 <button onclick="onBtnDemo3()">Try Demo Users</button>
 <button onclick="onBtnReset()">Reset</button>
 Delimiter: <input type="text" name="" id="delimiterInput" value="," style="width:30px; text-align: center;" />
+Quotes: <input type="text" name="" id="quotesInput" value="&quot;" style="width:30px; text-align: center;" />
 
 <div id="inputArea">
 	<div id="picker" style="height: 200px;"></div>
@@ -17,7 +18,12 @@ Delimiter: <input type="text" name="" id="delimiterInput" value="," style="width
 </div>
 </div>
 
-<div id="csvGrid" style="height: 1000px; width: 100%; display: none;" class="ag-theme-balham"></div>
+<div id="gridWrapper" style="display: none;">
+<div style="margin-bottom: 5px;">
+	<input type="text" oninput="onQuickFilterChanged()" id="quickFilter" placeholder="quick filter..." />
+</div>
+<div id="csvGrid" style="height: 1000px; width: 100%;" class="ag-theme-balham"></div>
+</div>
 
 <script src="//static.filestackapi.com/filestack-js/3.x.x/filestack.min.js"></script>
 
@@ -46,7 +52,7 @@ function onBtnDemo3() {
 function onBtnReset() {
   document.querySelector("#inputArea").style.display = "block";
   if(gridOptions.api) gridOptions.api.destroy();
-  document.querySelector("#csvGrid").style.display = "none";
+  document.querySelector("#gridWrapper").style.display = "none";
 }
 
 // 
@@ -123,9 +129,15 @@ client.picker(options).open();
       function createGrid(text){ 
 
       	var delimiter = document.getElementById("delimiterInput").value;
+      	var quotes = document.getElementById("quotesInput").value;
+      	var supQuotes = false;
+      	if(quotes == "") !supQuotes;
+
 
       	document.querySelector("#inputArea").style.display = "none";
-      	document.querySelector("#csvGrid").style.display = "block";
+      	document.querySelector("#gridWrapper").style.display = "block";
+
+		$('#csvGrid').height($(window).height() - 150);
 
 	      gridOptions = {
 	        statusBar: {
@@ -139,12 +151,15 @@ client.picker(options).open();
 	            { statusPanel: "agAggregationComponent", align: "right" }
 	          ]
 	        },
+	        defaultCsvExportParams: {
+	        	columnSeparator: delimiter,
+	        	suppressQuotes: supQuotes,
+	        	filename: formatDate() + "_export.csv"
+	        },
 	        defaultColDef: {
-	          minWidth: 50,
 	          sortable: true,
 	          filter: true,
 	          resizable: true,
-	          editable: true,
 	          enableRowGroup: true,
 	          enableValue: true,
 	          enablePivot: true
@@ -158,23 +173,25 @@ client.picker(options).open();
 	        rowDragManaged: true,
 	        enableMultiRowDragging: true,
 	        rowSelection: "multiple",
+	        groupSelectsChildren: true,
 	        undoRedoCellEditing: true,
-    		undoRedoCellEditingLimit: 50,
+    			undoRedoCellEditingLimit: 50,
 	        animateRows: true,
-	        groupUseEntireRow: true,
 	        suppressDragLeaveHidesColumns: true,
 	        suppressMakeColumnVisibleAfterUnGroup: true,
+	        suppressFieldDotNotation: true,
 	        rowGroupPanelShow: "always",
 	        sideBar: {
           		toolPanels: ["columns", "filters"]
-        	}
+        	},
+        	onFirstDataRendered: onFirstDataRendered
 	     };
 
 	      // create the grid passing in the div to use together with the columns & data we want to use
 	      new agGrid.Grid(eGridDiv, gridOptions);
 
 	      // parse text to get csv rows
-	      var csvRows = parseCSV(text, delimiter);
+	      var csvRows = parseCSV(text, delimiter, quotes);
 	      console.log(csvRows[0].length + " Cols");
 	      console.log(csvRows.length + " Rows");
 
@@ -183,7 +200,6 @@ client.picker(options).open();
 	      gridOptions.api.setColumnDefs(colDefs);
 	      console.log(csvRows[0]);
 	      
-
 	      // create rows
 	      var rowData = JSON.parse(parseCSVtoObjects(csvRows));
 	      console.log(rowData);
@@ -191,6 +207,20 @@ client.picker(options).open();
 	      console.log("rows created");
 
       }
+
+	    function onFirstDataRendered(params) {
+  			//params.api.sizeColumnsToFit();
+  			  var allColumnIds = [];
+			  gridOptions.columnApi.getAllColumns().forEach(function (column) {
+			    allColumnIds.push(column.colId);
+			  });
+
+  			gridOptions.columnApi.autoSizeColumns(allColumnIds, false);
+		}
+
+	 	function onQuickFilterChanged() {
+  			gridOptions.api.setQuickFilter(document.getElementById('quickFilter').value);
+	  	}	
 
       function createCols(headers) {
         console.log("createCols");
@@ -203,15 +233,40 @@ client.picker(options).open();
             var colDef = { 
               colId: "Col_" + col,
               field: headers[col], 
+              editable: false,
               headerName: headers[col], 
               rowDrag: true, 
               headerCheckboxSelection: true,
-              checkboxSelection: true };
+              checkboxSelection: true,
+	          	checkboxSelection: function(params) {
+                    // we put checkbox on the name if we are not doing grouping
+                    return params.columnApi.getRowGroupColumns().length === 0;
+                },
+                headerCheckboxSelection: function(params) {
+                    // we put checkbox on the name if we are not doing grouping
+                    return params.columnApi.getRowGroupColumns().length === 0;
+                },
+                headerCheckboxSelectionFilteredOnly: true
+            };
+
+            var autoColDef = {
+            	field: headers[col],  	
+            	minWidth: 250,
+		        	headerName: "Group",
+		        	headerCheckboxSelection: true,
+					    cellRendererParams: {
+					        checkbox: true
+					    }
+            }
+
+            gridOptions.api.setAutoGroupColumnDef(autoColDef);
+
           } else {
             var colDef = { 
               colId: "Col_" + col,
               field: headers[col],
-              headerName: headers[col]
+              headerName: headers[col],
+              editable: true
           	};
           }
           columns.push(colDef);
@@ -220,7 +275,7 @@ client.picker(options).open();
         return columns;
       }
 
-	    function parseCSV(str, delimiter) {
+	    function parseCSV(str, delimiter, quotes) {
 	    	console.log("parse Start");
 		    var arr = [];
 		    var quote = false;
@@ -229,14 +284,30 @@ client.picker(options).open();
 		        arr[row] = arr[row] || [];
 		        arr[row][col] = arr[row][col] || '';
 
-		        if (cc == '"' && quote && nc == '"') { arr[row][col] += cc; ++c; continue; }  
-		        if (cc == '"') { quote = !quote; continue; }
+		        // add #row no 
+		        if(row == 0 && col == 0) {
+		        	arr[row][col] = "#";
+		        	++col;
+		        	--c;
+		        	continue;
+		        }
+
+		        if(row != 0 && col == 0) {
+		        	arr[row][col] = row;
+		        	++col;
+		        	--c;
+		        	continue;
+		        }
+
+		        if (cc == quotes && quote && nc == quotes) { arr[row][col] += cc; ++c; continue; }  
+		        if (cc == quotes) { quote = !quote; continue; }
 		        if (cc == delimiter && !quote) { ++col; continue; }
 		        if (cc == '\r' && nc == '\n' && !quote) { ++row; col = 0; ++c; continue; }
 		        if (cc == '\n' && !quote) { ++row; col = 0; continue; }
 		        if (cc == '\r' && !quote) { ++row; col = 0; continue; }
 
 		        arr[row][col] += cc;
+        
 		    }
 		    console.log("parse End");
 		    return arr;
@@ -272,6 +343,21 @@ client.picker(options).open();
         return JSON.stringify(result); //JSON
       }
 
+      function formatDate() {
+		    var d = new Date(),
+		        minute = '' + d.getMinutes(),
+		        hour = '' + d.getHours(),
+		        month = '' + (d.getMonth() + 1),
+		        day = '' + d.getDate(),
+		        year = d.getFullYear();
+
+		    if (month.length < 2) 
+		        month = '0' + month;
+		    if (day.length < 2) 
+		        day = '0' + day;
+
+    		return year + month + day + hour + minute;
+			}
 
     </script>
 
