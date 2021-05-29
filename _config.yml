@@ -8,9 +8,6 @@ collections:
   posts:
     title: Posts
     output: true
-  share:
-    title: Share
-    output: true
   tool:
     title: Tools
     output: true
