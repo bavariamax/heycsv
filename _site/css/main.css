@@ -57,6 +57,28 @@ pre > code { border: 0; padding-right: 0; padding-left: 0; }
 
 .icon > svg path { fill: #828282; }
 
+/** Loading Spinner */
+@keyframes loadingSpinner { 0% { transform: rotate(0); }
+  100% { transform: rotate(360deg); } }
+
+.loadingDiv { position: fixed; z-index: 999; overflow: show; margin: auto; top: 0; left: 0; bottom: 0; right: 0; width: 100px; height: 100px; background: #ffffff; }
+
+.loadingSpinner div { box-sizing: border-box !important; }
+
+.loadingSpinner > div { position: absolute; width: 72px; height: 72px; top: 14px; left: 14px; border-radius: 50%; border: 8px solid #000; border-color: #ff1616 transparent #ff1616 transparent; animation: loadingSpinner 1s linear infinite; }
+
+.loadingSpinner > div:nth-child(2) { border-color: transparent; }
+
+.loadingSpinner > div:nth-child(2) div { position: absolute; width: 100%; height: 100%; transform: rotate(45deg); }
+
+.loadingSpinner > div:nth-child(2) div:before, .loadingSpinner > div:nth-child(2) div:after { content: ""; display: block; position: absolute; width: 8px; height: 8px; top: -8px; left: 24px; background: #ff1616; border-radius: 50%; box-shadow: 0 64px 0 0 #ff1616; }
+
+.loadingSpinner > div:nth-child(2) div:after { left: -8px; top: 24px; box-shadow: 64px 0 0 0 #ff1616; }
+
+.loadingSpinner { width: 100%; height: 100%; position: relative; transform: translateZ(0) scale(1); backface-visibility: hidden; transform-origin: 0 0; /* see note above */ }
+
+.loadingSpinner div { box-sizing: content-box; }
+
 /** Site header */
 .wrapper-header { padding: 0px 24px; flex: 1 0 auto; width: 100%; max-width: calc(1200px - (30px * 2)); margin-left: auto; margin-right: auto; }
 
