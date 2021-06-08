@@ -1,81 +1,4 @@
-<!DOCTYPE html>
-<html>
-
-  <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <title>CSV Editor - HeyCSV</title>
-  <meta name="description" content="">
-
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-MHTBK2T');</script>
-<!-- End Google Tag Manager -->
-
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
-
-
- <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700" rel="stylesheet">
-  <link rel="stylesheet" href="http://127.0.0.1:4000/css/main.css">
-
-  <link rel="canonical" href="http://127.0.0.1:4000/editor/">
-
-<link rel="apple-touch-icon" sizes="180x180" href="http://127.0.0.1:4000/assets/favicon/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="http://127.0.0.1:4000/assets/favicon/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="http://127.0.0.1:4000/assets/favicon/favicon-16x16.png">
-<link rel="manifest" href="http://127.0.0.1:4000/assets/favicon/site.webmanifest">
-<link rel="shortcut icon" href="http://127.0.0.1:4000/assets/favicon/favicon2.ico">
-<meta name="msapplication-TileColor" content="#da532c">
-<meta name="msapplication-config" content="http://127.0.0.1:4000/assets/favicon/browserconfig.xml">
-<meta name="theme-color" content="#ffffff">
-
-
-<!-- AG Grid -->
-<script src="https://unpkg.com/@ag-grid-enterprise/all-modules@25.3.0/dist/ag-grid-enterprise.min.js"></script>
-<link rel="stylesheet" href="https://unpkg.com/ag-grid-community/dist/styles/ag-grid.css"/>
-<link rel="stylesheet" href="https://unpkg.com/ag-grid-community/dist/styles/ag-theme-alpine.css"/>
-<!-- AG Grid -->
-
-</head>
-
-
-  <body>
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MHTBK2T"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
-
-    <header class="site-header">
-
-  <div class="wrapper-header">
-
-    <a class="site-title" href="http://127.0.0.1:4000/"><img src="http://127.0.0.1:4000/assets/heycsv_logo_transp.svg" alt="HeyCSV Logo" /></a>
-
-	<nav class="site-nav">
-      <a href="#" class="menu-icon">
-        <svg viewBox="0 0 18 15">
-          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
-          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
-          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
-        </svg>
-      </a>
-
-
-  </nav>
-  </div>
-
-</header>
-
-
-    <div class="page-content" style="padding: 0px;">
-
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+I"!X<nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -129,30 +52,30 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 				    <div class="row">
 				      <div class="col-md-3">Header Row</div>
 				      <div class="col-md-9 ms-auto form-check form-switch">
-				      	<input class="form-check-input" type="checkbox" id="headerChecked" onclick="updatePreview();" checked="" />
+				      	<input class="form-check-input" type="checkbox" id="headerChecked" checked="" />
 							</div>
 				    </div>
 				    <div class="row">
 				      <div class="col-md-3">Column Delimiter</div>
 				      <div class="col-md-9 ms-auto">
 								<div class="form-check form-check-inline">
-								  <input class="form-check-input" type="radio" name="delimiterInput" id="delimiterComma" value="," onclick="updatePreview();" checked="" />
-								  <label class="form-check-label" for="delimiterComma">Comma ,</label>
+								  <input class="form-check-input" type="radio" name="delimiterInput" id="delimiterInput" value="," checked="" />
+								  <label class="form-check-label" for="delimiterComma">Comma</label>
 								</div>
 								<div class="form-check form-check-inline">
-								  <input class="form-check-input" type="radio" name="delimiterInput" id="delimiterSemicolon" value=";" onclick="updatePreview();" />
-								  <label class="form-check-label" for="delimiterSemicolon">Semicolon ;</label>
+								  <input class="form-check-input" type="radio" name="delimiterInput" id="delimiterInput" value=";" />
+								  <label class="form-check-label" for="delimiterSemicolon">Semicolon</label>
 								</div>
 								<div class="form-check form-check-inline">
-								  <input class="form-check-input" type="radio" name="delimiterInput" id="delimiterBar" value="|" onclick="updatePreview();" />
-								  <label class="form-check-label" for="delimiterBar">Vertical bar |</label>
-								</div>
-								<div class="form-check form-check-inline">
-								  <input class="form-check-input" type="radio" name="delimiterInput" id="delimiterTab" value="&#9;" onclick="updatePreview();" />
+								  <input class="form-check-input" type="radio" name="delimiterInput" id="delimiterInput" value="&#9;" />
 								  <label class="form-check-label" for="delimiterTab">Tab</label>
 								</div>
 								<div class="form-check form-check-inline">
-								  <input class="form-check-input" type="radio" name="delimiterInput" id="delimiterSpace" value=" " onclick="updatePreview();" />
+								  <input class="form-check-input" type="radio" name="delimiterInput" id="delimiterInput" value="|" />
+								  <label class="form-check-label" for="delimiterBar">Vertical bar</label>
+								</div>
+								<div class="form-check form-check-inline">
+								  <input class="form-check-input" type="radio" name="delimiterInput" id="delimiterInput" value=" " />
 								  <label class="form-check-label" for="delimiterSpace">Space</label>
 								</div>
 							</div>
@@ -161,11 +84,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 				      <div class="col-md-3">Quotation</div>
 				      <div class="col-md-9 ms-auto">
 								<div class="form-check form-check-inline">
-								  <input class="form-check-input" type="radio" name="quotesInput" id="quotesTrue" value="&quot;" onclick="updatePreview();" checked="" />
+								  <input class="form-check-input" type="radio" name="quotesInput" id="quotesInput" value="&quot;" checked="" />
 								  <label class="form-check-label" for="quotesTrue">"True"</label>
 								</div>
 								<div class="form-check form-check-inline">
-								  <input class="form-check-input" type="radio" name="quotesInput" id="quotesFalse" value="" onclick="updatePreview();" />
+								  <input class="form-check-input" type="radio" name="quotesInput" id="quotesInput" value="" />
 								  <label class="form-check-label" for="quotesFalse">False</label>
 								</div>
 							</div>
@@ -173,46 +96,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   				</div>
       </div>
       <div class="modal-body" style="border-top:  1px solid #dee2e6;">
-         <h6>Preview</h6>
+         <b>Preview</b>
          <div class="container">
   				<div class="row justify-content-start">
-  					<div class="col-md-4" id="previewLeft" style="border: 1px solid grey;">
-  						Name,Age,Favorite Color<br />
-  						"John","25","blue"<br />
-							"Mary","33","green"<br />
-							"Mike","51","red"
+  					<div class="col">
+				      Left
 				    </div>
-				    <div class="col-md-2" style="display: grid; justify-content: center; align-items: center;">
-				      <svg xmlns="http://www.w3.org/2000/svg" class="bi bi-chevron-compact-right" viewBox="0 0 16 16" width="64" height="64" fill="grey">
-  <path fill-rule="evenodd" d="M6.776 1.553a.5.5 0 0 1 .671.223l3 6a.5.5 0 0 1 0 .448l-3 6a.5.5 0 1 1-.894-.448L9.44 8 6.553 2.224a.5.5 0 0 1 .223-.671z"></path>
-</svg>
+				    <div class="col">
+				      Middle
 				    </div>
-				    <div class="col-md-6">
-				    	<div class="row" id="previewHeaderRow1" style="display: flex; border-bottom: 1px solid #ccc; background-color: rgb(245, 247, 247);">
-					    	<div class="col-md-3"><b>Name</b></div>
-					    	<div class="col-md-3"><b>Age</b></div>
-					    	<div class="col-md-6"><b>Favorite Color</b></div>
-					    </div>
-					    <div class="row" id="previewHeaderRow2" style="display: none;border-bottom: 1px solid #ccc; background-color: rgb(245, 247, 247);">
-					    	<div class="col-md-3"><b>Column 1</b></div>
-					    	<div class="col-md-3"><b>Column 2</b></div>
-					    	<div class="col-md-6"><b>Column 3</b></div>
-					    </div>
-				    	<div class="row" style="border-bottom: 1px solid #ccc;">
-					    	<div class="col-md-3">John</div>
-					    	<div class="col-md-3">25</div>
-					    	<div class="col-md-6">blue</div>
-					    </div>
-					    <div class="row" style="border-bottom: 1px solid #ccc;">
-					    	<div class="col-md-3">Mary</div>
-					    	<div class="col-md-3">33</div>
-					    	<div class="col-md-6">green</div>
-					    </div>
-					    <div class="row" style="border-bottom: 1px solid #ccc;">
-					    	<div class="col-md-3">Mike</div>
-					    	<div class="col-md-3">51</div>
-					    	<div class="col-md-6">red</div>
-					    </div>
+				    <div class="col">
+				      Right
 				    </div>
   				 </div>
 				 </div>
@@ -257,38 +151,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <script type="text/javascript" charset="utf-8">
 
-
-//
-// Settings Preview
-//
-
-function updatePreview(){
-	var delimiter =  $("input[type='radio'][name='delimiterInput']:checked").val();
-  var quotes = $("input[type='radio'][name='quotesInput']:checked").val();
-  var header = document.querySelector("#headerChecked").checked;
-
-	var col1 = ["John", "Mary", "Mike"];
-	var col2 = ["25", "33", "51"];
-	var col3 = ["blue", "green", "red"];
-
-	document.querySelector("#previewLeft").innerHTML = "";
-
-	if(header) {
-		document.querySelector("#previewLeft").innerHTML += "Name" + delimiter + "Age" + delimiter + "Favorite Color" + "<br />";
-		document.querySelector("#previewHeaderRow1").style.display = "flex";
-		document.querySelector("#previewHeaderRow2").style.display = "none";
-	} else {
-		document.querySelector("#previewHeaderRow1").style.display = "none";
-		document.querySelector("#previewHeaderRow2").style.display = "flex";
-	}
-
-	for(i=0;i<3;i++) {
-		document.querySelector("#previewLeft").innerHTML += quotes + col1[i] + quotes + delimiter + col2[i] + delimiter + quotes + col3[i] + quotes + "<br />";
-	}
-
-}
-
-
 //
 // URL Parameter
 // 
@@ -301,7 +163,7 @@ if(urlParams.has('s')){
 }
 
 //
-// Menu Links
+// Buttons
 // 
 
 function onBtnDemo1() {
@@ -361,8 +223,8 @@ function onBtnExportExcel() {
 }
 
 function getExportParams(ending) {
-  var delimiter =  $("input[type='radio'][name='delimiterInput']:checked").val();
-  var quotes = $("input[type='radio'][name='quotesInput']:checked").val();
+  var delimiter = document.getElementById("delimiterInput").value;
+  var quotes = document.getElementById("quotesInput").value;
   var supQuotes = false;
   if(quotes == "") supQuotes = true;
   return {
@@ -412,8 +274,8 @@ function onBtnTest2() {
 }
 
 function setTitleRow(title, size) {
-	var delimiter =  $("input[type='radio'][name='delimiterInput']:checked").val() //document.getElementById("delimiterInput").value;
-  var quotes = $("input[type='radio'][name='quotesInput']:checked").val() //document.getElementById("quotesInput").value;
+	var delimiter = document.getElementById("delimiterInput").value;
+  var quotes = document.getElementById("quotesInput").value;
 	document.querySelector("#fileTitle").innerHTML = title + " | size: " + size + " | parsed with '" + delimiter + "' as column delimiter and '" + quotes + "' as text quotes";
 }
 
@@ -502,8 +364,8 @@ client.picker(options).open();
 
       function createGrid(text){ 
 
-			  var delimiter =  $("input[type='radio'][name='delimiterInput']:checked").val() //document.getElementById("delimiterInput").value;
-			  var quotes = $("input[type='radio'][name='quotesInput']:checked").val() //document.getElementById("quotesInput").value;
+      	var delimiter = document.getElementById("delimiterInput").value;
+      	var quotes = document.getElementById("quotesInput").value;
       	var supQuotes = false;
       	if(quotes == "") supQuotes = true;
 
@@ -798,44 +660,4 @@ client.picker(options).open();
 			};
     </script>
 
-
-
-    </div>
-
-    <footer class="site-footer">
-
-  <div class="wrapper">
-
-      <nav class="site-nav">
-      <a href="#" class="menu-icon">
-        <svg viewBox="0 0 18 15">
-          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
-          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
-          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
-        </svg>
-      </a>
-
-
-      <div class="trigger">
-        <a class="nav-link" href="mailto:support@heycsv.com">Support</a>
-        <a class="nav-link" href="http://127.0.0.1:4000/blog/">Blog</a>
-      </div>
-
-
-    </nav>
-
-
-
-  </div>
-
-</footer>
-
-
-
-<script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js" integrity="sha512-2rNj2KJ+D8s1ceNasTIex6z4HWyOnEYLVC3FigGOmyQCZc2eBXKgOxQmo3oKLHyfcj53uz4QMsRCWNbLd32Q1g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js" integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous"></script>
-  </body>
-
-</html>
-
+:ET

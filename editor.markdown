@@ -21,28 +21,14 @@ site-title: CSV Editor - HeyCSV
             <li><a class="dropdown-item" href="#" onclick="onBtnDemo1()">Load 1000 Sample Companies</a></li>
             <li><a class="dropdown-item" href="#" onclick="onBtnDemo2()">Load 1000 Sample Products</a></li>
             <li><a class="dropdown-item" href="#" onclick="onBtnDemo3()">Load 1000 Sample Users</a></li>
+            <li><a class="dropdown-item" href="#" onclick="onBtnDemo4()">Load 100k Sample Users</a></li>
           </ul>
+        </li> 
+        <li class="nav-item">
+          <a class="nav-link bi-gear" aria-current="page" id="navbarSettings" href="#" data-bs-toggle="modal" data-bs-target="#settingsModal"> Format Settings</a>
         </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle bi-gear" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Format Settings
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <li> <label>Delimiter:</label>
-						<select name="delimiterInput" id="delimiterInput">
-						  <option value=",">,</option>
-						  <option value=";">;</option>
-						  <option value="&#9;">TAB</option>
-						  <option value="|">|</option>
-						  <option value=" ">-space-</option>
-						</select></li>
-          	<li> <label>Quotes:</label>
-						<select name="quotesInput" id="quotesInput">
-						  <option value="&quot;">"</option>
-						  <option value="">-none-</option>
-						</select></li>
-						<li><a class="dropdown-item disabled" id="reload" href="#" onclick="reloadData()">Reload Data</a></li>
-          </ul>
+        <li class="nav-item">
+          <a class="nav-link bi-arrow-repeat disabled" aria-current="page" id="reload" href="#" onclick="onBtnReload()"> Reload Data</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle bi-download disabled" href="#" id="navbarExport" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -62,12 +48,121 @@ site-title: CSV Editor - HeyCSV
 </nav>
 
 
+<!-- Format Settings Modal -->
+<div class="modal fade" id="settingsModal" tabindex="-1" aria-labelledby="settingsModalLabel" aria-hidden="true" style="z-index: 3147483646;">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="settingsModalLabel">Format Settings</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+      	  <div class="container-fluid">
+				    <div class="row">
+				      <div class="col-md-3">Header Row</div>
+				      <div class="col-md-9 ms-auto form-check form-switch">
+				      	<input class="form-check-input" type="checkbox" id="headerChecked" onclick="updatePreview();" checked>
+							</div>
+				    </div>
+				    <div class="row">
+				      <div class="col-md-3">Column Delimiter</div>
+				      <div class="col-md-9 ms-auto">
+								<div class="form-check form-check-inline">
+								  <input class="form-check-input" type="radio" name="delimiterInput" id="delimiterComma" value="," onclick="updatePreview();" checked>
+								  <label class="form-check-label" for="delimiterComma">Comma ,</label>
+								</div>
+								<div class="form-check form-check-inline">
+								  <input class="form-check-input" type="radio" name="delimiterInput" id="delimiterSemicolon" value=";" onclick="updatePreview();" >
+								  <label class="form-check-label" for="delimiterSemicolon">Semicolon ;</label>
+								</div>
+								<div class="form-check form-check-inline">
+								  <input class="form-check-input" type="radio" name="delimiterInput" id="delimiterBar" value="|" onclick="updatePreview();">
+								  <label class="form-check-label" for="delimiterBar">Vertical bar |</label>
+								</div>
+								<div class="form-check form-check-inline">
+								  <input class="form-check-input" type="radio" name="delimiterInput" id="delimiterTab" value="&#9;" onclick="updatePreview();">
+								  <label class="form-check-label" for="delimiterTab">Tab</label>
+								</div>
+								<div class="form-check form-check-inline">
+								  <input class="form-check-input" type="radio" name="delimiterInput" id="delimiterSpace" value=" " onclick="updatePreview();">
+								  <label class="form-check-label" for="delimiterSpace">Space</label>
+								</div>
+							</div>
+				    </div>
+				    <div class="row">
+				      <div class="col-md-3">Quotation</div>
+				      <div class="col-md-9 ms-auto">
+								<div class="form-check form-check-inline">
+								  <input class="form-check-input" type="radio" name="quotesInput" id="quotesTrue" value="&quot;" onclick="updatePreview();" checked>
+								  <label class="form-check-label" for="quotesTrue">"True"</label>
+								</div>
+								<div class="form-check form-check-inline">
+								  <input class="form-check-input" type="radio" name="quotesInput" id="quotesFalse" value="" onclick="updatePreview();">
+								  <label class="form-check-label" for="quotesFalse">False</label>
+								</div>
+							</div>
+				    </div>
+  				</div>
+      </div>
+      <div class="modal-body" style="border-top:  1px solid #dee2e6;">
+         <h6>Preview</h6>
+         <div class="container">
+  				<div class="row justify-content-start">
+  					<div class="col-md-4" id="previewLeft" style="border: 1px solid grey;">
+  						Name,Age,Favorite Color<br />
+  						"John","25","blue"<br />
+							"Mary","33","green"<br />
+							"Mike","51","red"
+				    </div>
+				    <div class="col-md-2" style="display: grid; justify-content: center; align-items: center;">
+				      <svg xmlns="http://www.w3.org/2000/svg" class="bi bi-chevron-compact-right" viewBox="0 0 16 16" width="64" height="64" fill="grey">
+  <path fill-rule="evenodd" d="M6.776 1.553a.5.5 0 0 1 .671.223l3 6a.5.5 0 0 1 0 .448l-3 6a.5.5 0 1 1-.894-.448L9.44 8 6.553 2.224a.5.5 0 0 1 .223-.671z"></path>
+</svg>
+				    </div>
+				    <div class="col-md-6">
+				    	<div class="row" id="previewHeaderRow1" style="display: flex; border-bottom: 1px solid #ccc; background-color: rgb(245, 247, 247);">
+					    	<div class="col-md-3"><b>Name</b></div>
+					    	<div class="col-md-3"><b>Age</b></div>
+					    	<div class="col-md-6"><b>Favorite Color</b></div>
+					    </div>
+					    <div class="row" id="previewHeaderRow2" style="display: none;border-bottom: 1px solid #ccc; background-color: rgb(245, 247, 247);">
+					    	<div class="col-md-3"><b>Column 1</b></div>
+					    	<div class="col-md-3"><b>Column 2</b></div>
+					    	<div class="col-md-6"><b>Column 3</b></div>
+					    </div>
+				    	<div class="row" style="border-bottom: 1px solid #ccc;">
+					    	<div class="col-md-3">John</div>
+					    	<div class="col-md-3">25</div>
+					    	<div class="col-md-6">blue</div>
+					    </div>
+					    <div class="row" style="border-bottom: 1px solid #ccc;">
+					    	<div class="col-md-3">Mary</div>
+					    	<div class="col-md-3">33</div>
+					    	<div class="col-md-6">green</div>
+					    </div>
+					    <div class="row" style="border-bottom: 1px solid #ccc;">
+					    	<div class="col-md-3">Mike</div>
+					    	<div class="col-md-3">51</div>
+					    	<div class="col-md-6">red</div>
+					    </div>
+				    </div>
+  				 </div>
+				 </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
 <div class="wrapper" style="padding: 20px;">
 <div id="inputArea" style="margin-bottom: 100px;">
 	<div id="picker" style="height: 200px;"></div>
 	<div style="padding: 30px;">Or paste text below:</div>
 	<div><textarea id="pasteText" style="width:100%; height: 200px;"></textarea>
-		<button onclick="inputGrid()">Load Text into Editor</button></div>
+		<button onclick="inputGrid()">Parse Text</button></div>
 </div>
 
 
@@ -84,7 +179,7 @@ site-title: CSV Editor - HeyCSV
 	<div id="fileTitle" style="font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif; font-size: 14px; padding-left: 40px; height: 32px; background-color: rgb(245, 247, 247); display: table-cell; vertical-align: middle;"></div>
 </div>
 <div style="border-top: 1px solid #bdc3c7;">
-	<input type="text" oninput="onQuickFilterChanged()" id="quickFilter" placeholder="quick search..." style="font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif; font-size: 12px; padding-left: 40px; line-height: normal; height: 32px; border: none; outline-width: 0; width: 100%; background-color: rgb(245, 247, 247);">
+	<input type="text" oninput="onQuickFilterChanged()" id="quickFilter" placeholder="Quick search..." style="font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif; font-size: 12px; padding-left: 40px; line-height: normal; height: 32px; border: none; outline-width: 0; width: 100%; background-color: rgb(245, 247, 247);">
 </div>
 <div id="csvGrid" style="height: 1000px; width: 100%;" class="ag-theme-balham"></div>
 </div>
@@ -93,6 +188,38 @@ site-title: CSV Editor - HeyCSV
 
 <script src="//static.filestackapi.com/filestack-js/3.x.x/filestack.min.js"></script>
 <script type="text/javascript" charset="utf-8">
+
+
+//
+// Settings Preview
+//
+
+function updatePreview(){
+	var delimiter =  $("input[type='radio'][name='delimiterInput']:checked").val();
+  var quotes = $("input[type='radio'][name='quotesInput']:checked").val();
+  var header = document.querySelector("#headerChecked").checked;
+
+	var col1 = ["John", "Mary", "Mike"];
+	var col2 = ["25", "33", "51"];
+	var col3 = ["blue", "green", "red"];
+
+	document.querySelector("#previewLeft").innerHTML = "";
+
+	if(header) {
+		document.querySelector("#previewLeft").innerHTML += "Name" + delimiter + "Age" + delimiter + "Favorite Color" + "<br />";
+		document.querySelector("#previewHeaderRow1").style.display = "flex";
+		document.querySelector("#previewHeaderRow2").style.display = "none";
+	} else {
+		document.querySelector("#previewHeaderRow1").style.display = "none";
+		document.querySelector("#previewHeaderRow2").style.display = "flex";
+	}
+
+	for(i=0;i<3;i++) {
+		document.querySelector("#previewLeft").innerHTML += quotes + col1[i] + quotes + delimiter + col2[i] + delimiter + quotes + col3[i] + quotes + "<br />";
+	}
+
+}
+
 
 //
 // URL Parameter
@@ -106,7 +233,7 @@ if(urlParams.has('s')){
 }
 
 //
-// Buttons
+// Menu Links
 // 
 
 function onBtnDemo1() {
@@ -124,6 +251,11 @@ function onBtnDemo3() {
   createGridUrl("https://www.heycsv.com/downloads/sample-csv/1k-sample-users.csv");
 }
 
+function onBtnDemo4() {
+  if(gridOptions.api) gridOptions.api.destroy();
+  createGridUrl("https://www.heycsv.com/downloads/sample-csv/100k-sample-users.csv");
+}
+
 function onBtnReset() {
   document.querySelector(".wrapper").style.display = "block";
   document.querySelector("#fileTitle").innerHTML = "";
@@ -138,6 +270,18 @@ function onBtnReset() {
   document.querySelector("#gridWrapper").style.display = "none";
 }
 
+function onBtnReload() {
+	if(gridOptions.api) gridOptions.api.destroy();
+	// check if data got inputted in text area or via URL
+	if(document.querySelector("#loadedUrl").value == "") {
+		console.log("reload inputGrid");
+		inputGrid();
+	} else {
+		console.log("reload: " + document.querySelector("#loadedUrl").value);
+		createGridUrl(document.querySelector("#loadedUrl").value);
+	}
+}
+
 function onBtnExportCsv() {
 	var params = getExportParams("csv");
 	gridOptions.api.exportDataAsCsv(params);
@@ -149,8 +293,8 @@ function onBtnExportExcel() {
 }
 
 function getExportParams(ending) {
-  var delimiter = document.getElementById("delimiterInput").value;
-  var quotes = document.getElementById("quotesInput").value;
+  var delimiter =  $("input[type='radio'][name='delimiterInput']:checked").val();
+  var quotes = $("input[type='radio'][name='quotesInput']:checked").val();
   var supQuotes = false;
   if(quotes == "") supQuotes = true;
   return {
@@ -200,22 +344,11 @@ function onBtnTest2() {
 }
 
 function setTitleRow(title, size) {
-	var delimiter = document.getElementById("delimiterInput").value;
-  var quotes = document.getElementById("quotesInput").value;
-	document.querySelector("#fileTitle").innerHTML = title + " | size: " + size + " | data parsed with '" + delimiter + "' as column delimiter and '" + quotes + "' text quotes";
+	var delimiter =  $("input[type='radio'][name='delimiterInput']:checked").val() //document.getElementById("delimiterInput").value;
+  var quotes = $("input[type='radio'][name='quotesInput']:checked").val() //document.getElementById("quotesInput").value;
+	document.querySelector("#fileTitle").innerHTML = title + " | size: " + size + " | parsed with '" + delimiter + "' as column delimiter and '" + quotes + "' as text quotes";
 }
 
-function reloadData() {
-	if(gridOptions.api) gridOptions.api.destroy();
-	// check if data got inputted in text area or via URL
-	if(document.querySelector("#loadedUrl").value == "") {
-		console.log("reload inputGrid");
-		inputGrid();
-	} else {
-		console.log("reload: " + document.querySelector("#loadedUrl").value);
-		createGridUrl(document.querySelector("#loadedUrl").value);
-	}
-}
 
 // 
 // Paste 
@@ -301,8 +434,8 @@ client.picker(options).open();
 
       function createGrid(text){ 
 
-      	var delimiter = document.getElementById("delimiterInput").value;
-      	var quotes = document.getElementById("quotesInput").value;
+			  var delimiter =  $("input[type='radio'][name='delimiterInput']:checked").val() //document.getElementById("delimiterInput").value;
+			  var quotes = $("input[type='radio'][name='quotesInput']:checked").val() //document.getElementById("quotesInput").value;
       	var supQuotes = false;
       	if(quotes == "") supQuotes = true;
 
@@ -376,14 +509,33 @@ client.picker(options).open();
 	      console.log(csvRows[0].length + " Cols");
 	      console.log(csvRows.length + " Rows");
 
-	      // define header row and cols
-	      var colDefs = createCols(csvRows[0]);
-	      gridOptions.api.setColumnDefs(colDefs);
-	      console.log(csvRows[0]);
-	      
-	      // create rows
-	      var rowData = JSON.parse(parseCSVtoObjects(csvRows));
+	      // add artificial header when header checkbox false.
+		    if(!document.querySelector("#headerChecked").checked) {
+		    	var newHeader = [];
+		    	newHeader.push("#Row");
+		    	for (var col = 1; col < csvRows[0].length; col++) {
+		    		newHeader.push("Column " + col);
+		    		console.log("Column " + col);
+		    	}
+		    	var newRows = [];
+		    	newRows.push(newHeader);
+
+		    	for (var row = 0; row < csvRows.length; row++) {
+		    			newRows.push(csvRows[row]);
+		    	}
+
+		    	console.log(newRows[0]);
+		      var colDefs = createCols(newRows[0]);
+		      var rowData = JSON.parse(parseCSVtoObjects(newRows));
+		    } else {
+			    console.log(csvRows[0]);
+		      var colDefs = createCols(csvRows[0]);
+		      var rowData = JSON.parse(parseCSVtoObjects(csvRows));
+		    }
+
+	      // create grid
 	      console.log(rowData);
+	      gridOptions.api.setColumnDefs(colDefs);
 	      gridOptions.api.setRowData(rowData);
 	      console.log("rows created");
 
@@ -416,6 +568,7 @@ client.picker(options).open();
 
         var colCount = headers.length;
         var columns = [];
+
 
         for (var col = 0; col < colCount; col++) {
           if (col == 0) {
@@ -475,19 +628,30 @@ client.picker(options).open();
 		    var arr = [];
 		    var quote = false;
 		    for (var row = col = c = 0; c < str.length; c++) {
+		        
 		        var cc = str[c], nc = str[c+1];
 		        arr[row] = arr[row] || [];
 		        arr[row][col] = arr[row][col] || '';
 
-		        // add additional incremental column to have # row 
+		        // Always add additional incremental column to have # row 
 		        if(row == 0 && col == 0) {
-		        	arr[row][col] = "#Row";
+		        	// add artificial header when header checkbox false.
+		    			if(!document.querySelector("#headerChecked").checked) { 
+		    				arr[row][col] = "1"; 
+		    			} else {
+		    				arr[row][col] = "#Row";
+		    			}
+		        	
 		        	++col;
 		        	--c;
 		        	continue;
 		        }
 		        if(row != 0 && col == 0) {
-		        	arr[row][col] = row;
+		        	if(!document.querySelector("#headerChecked").checked) { 
+		    				arr[row][col] = row + 1; 
+		    			} else {
+		    				arr[row][col] = row;
+		    			}
 		        	++col;
 		        	--c;
 		        	continue;
@@ -501,7 +665,6 @@ client.picker(options).open();
 		        if (cc == '\r' && !quote) { ++row; col = 0; continue; }
 
 		        arr[row][col] += cc;
-        
 		    }
 		    console.log("parse End");
 		    return arr;
